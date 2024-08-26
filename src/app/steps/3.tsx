@@ -10,62 +10,25 @@ export default function Step3({
   form: UseFormReturnType<FormValues>;
 }) {
   return (
-    <FocusTrap>
-      <FormWrapper>
-        <Title text="Angaben zum Erziehungsberechtigten" />
-        <FormRow>
-          <TextInput
-            label="Nachname"
-            key={form.key("parentLastName")}
-            {...form.getInputProps("parentLastName")}
-          />
-          <TextInput
-            label="Vorname"
-            key={form.key("parentFirstName")}
-            {...form.getInputProps("parentFirstName")}
-          />
-        </FormRow>
-        <FormRow asymmetric>
-          <TextInput
-            className="col-span-3"
-            label="Straße"
-            key={form.key("street")}
-            {...form.getInputProps("street")}
-          />
-          <TextInput
-            label="Nr"
-            key={form.key("number")}
-            {...form.getInputProps("number")}
-          />
-        </FormRow>
-        <FormRow asymmetric>
-          <TextInput
-            label="PLZ"
-            key={form.key("postalCode")}
-            {...form.getInputProps("postalCode")}
-          />
-          <TextInput
-            className="col-span-3"
-            label="Ort"
-            key={form.key("city")}
-            {...form.getInputProps("city")}
-          />
-        </FormRow>
-        <FormRow>
-          <TextInput
-            label="E-Mail"
-            description="Für Ihre Anmeldebestätigung"
-            key={form.key("email")}
-            {...form.getInputProps("email")}
-          />
-          <TextInput
-            label="Handy / Telefon"
-            description="Tagsüber erreichbar"
-            key={form.key("phone")}
-            {...form.getInputProps("phone")}
-          />
-        </FormRow>
-      </FormWrapper>
-    </FocusTrap>
+    <FormWrapper>
+      <Title text="Kommunikation" />
+      <TextInput
+        label="E-Mail"
+        key={form.key("email")}
+        {...form.getInputProps("email")}
+      />
+      <FormRow>
+        <TextInput
+          label="Telefon"
+          key={form.key("phone")}
+          {...form.getInputProps("phone")}
+        />
+        <TextInput
+          label="Handy"
+          key={form.key("mobile")}
+          {...form.getInputProps("mobile")}
+        />
+      </FormRow>
+    </FormWrapper>
   );
 }

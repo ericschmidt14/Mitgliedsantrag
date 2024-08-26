@@ -5,11 +5,13 @@ import "@mantine/dates/styles.css";
 import "./globals.css";
 import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
 import { Suspense } from "react";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "1. FCN Fußballschule | Anmeldung",
+  title: "1. FCN Mitgliedsantrag",
   description: "",
 };
 
@@ -43,7 +45,15 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <MantineProvider theme={theme}>
-          <Suspense>{children}</Suspense>
+          <Suspense>
+            <main className="min-h-screen flex flex-col justify-between">
+              <div className="flex flex-col justify-between gap-8">
+                <Header />
+                {children}
+              </div>
+              <Footer />
+            </main>
+          </Suspense>
         </MantineProvider>
       </body>
     </html>

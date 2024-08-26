@@ -7,11 +7,7 @@ export function FormWrapper({
   children: React.ReactNode;
   className?: string;
 }) {
-  return (
-    <div className={`flex flex-col gap-4 md:gap-8 ${className}`}>
-      {children}
-    </div>
-  );
+  return <div className={`flex flex-col gap-4 ${className}`}>{children}</div>;
 }
 
 export function FormRow({

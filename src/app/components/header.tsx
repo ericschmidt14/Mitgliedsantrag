@@ -10,13 +10,13 @@ export default function Header() {
         <div className="flex items-center gap-1">
           <Image src="/logo.svg" alt="1. FCN Logo" width={48} height={48} />
           <p className="text-2xl uppercase">
-            Fussball<b>schule</b>
+            Mitglieds<b>antrag</b>
           </p>
         </div>
       </Link>
       <Button
         component="a"
-        href="mailto:fussballschule@fcn.de"
+        href="mailto:mitglied@fcn.de"
         leftSection={<IconMail size={20} />}
       >
         Kontakt

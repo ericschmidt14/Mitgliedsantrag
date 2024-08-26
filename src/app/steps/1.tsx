@@ -1,92 +1,81 @@
-import { useState } from "react";
 import Title from "../components/title";
-import { SegmentedControl, Select } from "@mantine/core";
+import {
+  Autocomplete,
+  SegmentedControl,
+  Select,
+  TextInput,
+} from "@mantine/core";
 import Label from "../components/label";
 import { UseFormReturnType } from "@mantine/form";
 import { FormValues } from "../form";
 import { FormRow, FormWrapper } from "../components/form";
-import { times, ageGroups } from "../values";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+import { DatePickerInput, DatesProvider } from "@mantine/dates";
 
 export default function Step1({
   form,
 }: {
   form: UseFormReturnType<FormValues>;
 }) {
-  const [youth, setYouth] = useState(form.getValues().youth);
-
-  form.watch("youth", ({ value }) => {
-    setYouth(value);
-    form.setFieldValue("time", times[value][0].value);
-  });
+  dayjs.extend(customParseFormat);
 
   return (
-    <FormWrapper>
-      <Title text="Zeitraum & Termin" />
-      <SegmentedControl
-        key={form.key("period")}
-        {...form.getInputProps("period")}
-        fullWidth
-        data={[
-          {
-            label: (
-              <>
-                <h3>3 Monate à 55€</h3>
-                <p className="muted">12 Einheiten</p>
-              </>
-            ),
-            value: "3",
-          },
-          {
-            label: (
-              <>
-                <h3>6 Monate à 50€</h3>
-                <p className="muted">24 Einheiten</p>
-              </>
-            ),
-            value: "6",
-          },
-        ]}
-        transitionDuration={500}
-        transitionTimingFunction="linear"
-      />
-      <FormRow>
-        <div>
-          <Label text="Jugend" />
-          <SegmentedControl
-            key={form.key("youth")}
-            {...form.getInputProps("youth")}
-            fullWidth
+    <DatesProvider settings={{ locale: "de" }}>
+      <FormWrapper>
+        <Title text="Persönliche Daten" />
+        <FormRow>
+          <Autocomplete
+            key={form.key("title")}
+            {...form.getInputProps("title")}
             data={[
-              { label: "F", value: "f" },
-              { label: "E", value: "e" },
-              { label: "D", value: "d" },
-              { label: "Torwarttraining", value: "t" },
+              "Dr.",
+              "Dr. med.",
+              "Dr.-Ing.",
+              "Dipl.-Ing.",
+              "Prof.",
+              "Prof. Dr.",
             ]}
-            transitionDuration={500}
-            transitionTimingFunction="linear"
+            label="Titel"
           />
-          <p
-            className="small muted"
-            style={{ marginTop: "calc(var(--mantine-spacing-xs) / 2)" }}
-          >
-            {ageGroups[youth]} Jahre
-          </p>
-        </div>
-        <Select
-          label="Zeit"
-          key={form.key("time")}
-          {...form.getInputProps("time")}
-          data={times[youth]}
-          allowDeselect={false}
-          checkIconPosition="right"
+          <div>
+            <Label text="Geschlecht" />
+            <SegmentedControl
+              key={form.key("gender")}
+              {...form.getInputProps("gender")}
+              fullWidth
+              data={["Männlich", "Weiblich", "Divers"]}
+              transitionDuration={500}
+              transitionTimingFunction="linear"
+            />
+          </div>
+        </FormRow>
+        <FormRow>
+          <TextInput
+            label="Vorname"
+            name="fname"
+            autoComplete="given-name"
+            key={form.key("firstName")}
+            {...form.getInputProps("firstName")}
+          />
+          <TextInput
+            label="Nachname"
+            name="lname"
+            autoComplete="family-name"
+            key={form.key("lastName")}
+            {...form.getInputProps("lastName")}
+          />
+        </FormRow>
+        <DatePickerInput
+          defaultDate={new Date("1990-01-01")}
+          defaultLevel="decade"
+          valueFormat="DD.MM.YYYY"
+          label="Geburtstag"
+          placeholder="TT.MM.JJJJ"
+          key={form.key("dob")}
+          {...form.getInputProps("dob")}
         />
-      </FormRow>
-      <div>
-        <p className="small">
-          <b>Das Training findet ganzjährig statt</b>, ausgenommen sind
-          Feiertage und Schulferien. Eine Anmeldung ist ganzjährig möglich.
-        </p>
-      </div>
-    </FormWrapper>
+      </FormWrapper>
+    </DatesProvider>
   );
 }

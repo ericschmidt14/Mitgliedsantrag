@@ -1,7 +1,5 @@
-import { SOCCER_SCHOOL_API } from "@/app/constants";
-
 export async function POST(request: Request) {
-  const res = await fetch(`${SOCCER_SCHOOL_API}/save`, {
+  const res = await fetch("", {
     method: "POST",
     headers: {
       Accept: "*/*",
@@ -9,7 +7,6 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify(await request.json()),
   });
-  const token = await res.text();
-
-  return Response.json(token);
+  const txt = await res.text();
+  return Response.json(txt);
 }
