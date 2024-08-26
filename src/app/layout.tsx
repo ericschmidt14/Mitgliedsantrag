@@ -41,10 +41,10 @@ export default function RootLayout({
   return (
     <html lang="de">
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="dark" />
       </head>
       <body className={inter.className}>
-        <MantineProvider theme={theme}>
+        <MantineProvider theme={theme} defaultColorScheme="dark">
           <Suspense>
             <main className="min-h-screen flex flex-col justify-between">
               <div className="flex flex-col justify-between gap-8">

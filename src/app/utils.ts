@@ -2,7 +2,8 @@ export const formatIBAN = (iban: string) => {
   return iban
     .replace(/\s/g, "")
     .replace(/(.{4})/g, "$1 ")
-    .trim();
+    .trim()
+    .toUpperCase();
 };
 
 export const isValidIBAN = (iban: string) => {

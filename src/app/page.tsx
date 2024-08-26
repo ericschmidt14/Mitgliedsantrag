@@ -54,7 +54,7 @@ export default function Home() {
               margin: "32px auto 16px",
               padding: "48px 32px",
               borderRadius: "var(--mantine-radius-md)",
-              background: "var(--mantine-color-gray-0)",
+              background: "rgba(255, 255, 255, 0.0925)",
               boxShadow: "var(--mantine-shadow-xl)",
             },
             steps: {

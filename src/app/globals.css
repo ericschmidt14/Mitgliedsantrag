@@ -3,31 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground: var(--mantine-color-white);
+  --background: var(--mantine-color-black);
   --transition: 300ms all ease-in-out;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background-color: #e4e4e1;
-  background-image: radial-gradient(
-      at top center,
-      rgba(255, 255, 255, 0.03) 0%,
-      rgba(0, 0, 0, 0.03) 100%
-    ),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(143, 152, 157, 0.6) 100%
-    );
-  background-blend-mode: normal, multiply;
-}
-
-#lp {
-  background: url(/bg.png) center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 h1 {
