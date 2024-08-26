@@ -4,6 +4,7 @@ import Title from "../components/title";
 import { Checkbox, Divider, TextInput } from "@mantine/core";
 import { FormValues } from "../form";
 import { FormWrapper } from "../components/form";
+import { formatIBAN } from "../utils";
 
 export default function Step5({
   form,
@@ -29,6 +30,9 @@ export default function Step5({
         label="IBAN"
         key={form.key("iban")}
         {...form.getInputProps("iban")}
+        onChange={(event) => {
+          form.setFieldValue("iban", formatIBAN(event.currentTarget.value));
+        }}
         withAsterisk
       />
       <p className="col-span-2 muted small">
