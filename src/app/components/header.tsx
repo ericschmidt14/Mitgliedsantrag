@@ -15,6 +15,7 @@ export default function Header() {
         </div>
       </Link>
       <Button
+        className="hidden md:block"
         component="a"
         href="mailto:mitglied@fcn.de"
         leftSection={<IconMail size={20} />}
