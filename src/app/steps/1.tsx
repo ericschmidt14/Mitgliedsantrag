@@ -12,6 +12,7 @@ import { FormRow, FormWrapper } from "../components/form";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { DatePickerInput, DatesProvider } from "@mantine/dates";
+import { IconCalendar } from "@tabler/icons-react";
 
 export default function Step1({
   form,
@@ -80,6 +81,7 @@ export default function Step1({
           placeholder="TT.MM.JJJJ"
           key={form.key("dob")}
           {...form.getInputProps("dob")}
+          leftSection={<IconCalendar size={16} />}
           withAsterisk
         />
       </FormWrapper>

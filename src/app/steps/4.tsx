@@ -7,6 +7,7 @@ import { FormValues } from "../form";
 import { FormRow, FormWrapper } from "../components/form";
 import { DatePickerInput, DatesProvider } from "@mantine/dates";
 import { Fieldset, Select, TextInput } from "@mantine/core";
+import { IconCalendar } from "@tabler/icons-react";
 
 export default function Step4({
   form,
@@ -27,6 +28,7 @@ export default function Step4({
             placeholder="TT.MM.JJJJ"
             key={form.key("entryDate")}
             {...form.getInputProps("entryDate")}
+            leftSection={<IconCalendar size={16} />}
             withAsterisk
           />
           <Select
