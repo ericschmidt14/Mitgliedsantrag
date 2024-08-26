@@ -21,13 +21,15 @@ export default function Step5({
       <TextInput
         className="col-span-2"
         label="Name des Kontoinhabers"
-        key={form.key("name")}
-        {...form.getInputProps("name")}
+        key={form.key("depositor")}
+        {...form.getInputProps("depositor")}
+        withAsterisk
       />
       <TextInput
         label="IBAN"
         key={form.key("iban")}
         {...form.getInputProps("iban")}
+        withAsterisk
       />
       <p className="col-span-2 muted small">
         Vor dem ersten Einzug der SEPA-Lastschrift wird mich der 1. Fußball-Club

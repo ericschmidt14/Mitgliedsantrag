@@ -27,6 +27,7 @@ export default function Step4({
             placeholder="TT.MM.JJJJ"
             key={form.key("entryDate")}
             {...form.getInputProps("entryDate")}
+            withAsterisk
           />
           <Select
             key={form.key("membershipType")}
@@ -39,6 +40,7 @@ export default function Step4({
             ]}
             checkIconPosition="right"
             label="Beitragsart"
+            withAsterisk
           />
         </FormRow>
         <TextInput

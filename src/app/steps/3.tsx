@@ -16,6 +16,7 @@ export default function Step3({
         label="E-Mail"
         key={form.key("email")}
         {...form.getInputProps("email")}
+        withAsterisk
       />
       <FormRow>
         <TextInput

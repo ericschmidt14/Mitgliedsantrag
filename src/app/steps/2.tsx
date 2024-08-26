@@ -19,24 +19,28 @@ export default function Step2({
         label="Straße & Hausnummer"
         key={form.key("street")}
         {...form.getInputProps("street")}
+        withAsterisk
       />
       <FormRow asymmetric>
         <TextInput
           label="PLZ"
           key={form.key("postalCode")}
           {...form.getInputProps("postalCode")}
+          withAsterisk
         />
         <TextInput
           className="col-span-3"
           label="Ort"
           key={form.key("city")}
           {...form.getInputProps("city")}
+          withAsterisk
         />
       </FormRow>
       <TextInput
         label="Land"
         key={form.key("country")}
         {...form.getInputProps("country")}
+        withAsterisk
       />
     </FormWrapper>
   );

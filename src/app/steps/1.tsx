@@ -39,7 +39,7 @@ export default function Step1({
             label="Titel"
           />
           <div>
-            <Label text="Geschlecht" />
+            <Label text="Geschlecht" withAsterisk />
             <SegmentedControl
               key={form.key("gender")}
               {...form.getInputProps("gender")}
@@ -57,6 +57,7 @@ export default function Step1({
             autoComplete="given-name"
             key={form.key("firstName")}
             {...form.getInputProps("firstName")}
+            withAsterisk
           />
           <TextInput
             label="Nachname"
@@ -64,6 +65,7 @@ export default function Step1({
             autoComplete="family-name"
             key={form.key("lastName")}
             {...form.getInputProps("lastName")}
+            withAsterisk
           />
         </FormRow>
         <DatePickerInput
@@ -74,6 +76,7 @@ export default function Step1({
           placeholder="TT.MM.JJJJ"
           key={form.key("dob")}
           {...form.getInputProps("dob")}
+          withAsterisk
         />
       </FormWrapper>
     </DatesProvider>
