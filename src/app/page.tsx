@@ -51,7 +51,7 @@ export default function Home() {
           styles={{
             content: {
               position: "relative",
-              margin: "32px auto 16px",
+              margin: "16px auto",
               padding: "48px 32px",
               borderRadius: "var(--mantine-radius-md)",
               background: "rgba(255, 255, 255, 0.0925)",
