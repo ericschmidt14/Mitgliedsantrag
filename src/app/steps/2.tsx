@@ -17,6 +17,8 @@ export default function Step2({
       <TextInput
         className="col-span-3"
         label="Straße & Hausnummer"
+        name="street"
+        autoComplete="street"
         key={form.key("street")}
         {...form.getInputProps("street")}
         withAsterisk
@@ -24,6 +26,8 @@ export default function Step2({
       <FormRow asymmetric>
         <TextInput
           label="PLZ"
+          name="postal"
+          autoComplete="postal"
           key={form.key("postalCode")}
           {...form.getInputProps("postalCode")}
           withAsterisk
@@ -31,6 +35,8 @@ export default function Step2({
         <TextInput
           className="col-span-3"
           label="Ort"
+          name="city"
+          autoComplete="city"
           key={form.key("city")}
           {...form.getInputProps("city")}
           withAsterisk

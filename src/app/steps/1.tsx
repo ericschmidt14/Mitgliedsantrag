@@ -44,7 +44,11 @@ export default function Step1({
               key={form.key("gender")}
               {...form.getInputProps("gender")}
               fullWidth
-              data={["Männlich", "Weiblich", "Divers"]}
+              data={[
+                { label: "Männlich", value: "m" },
+                { label: "Weiblich", value: "w" },
+                { label: "Divers", value: "d" },
+              ]}
               transitionDuration={500}
               transitionTimingFunction="linear"
             />

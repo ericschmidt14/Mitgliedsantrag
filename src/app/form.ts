@@ -1,6 +1,6 @@
 export const getInitialValues = () => {
   return {
-    gender: "Männlich",
+    gender: "m",
     title: "",
     firstName: "",
     lastName: "",
