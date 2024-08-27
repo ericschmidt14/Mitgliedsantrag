@@ -14,6 +14,8 @@ export default function Step3({
       <Title text="Kommunikation" />
       <TextInput
         label="E-Mail"
+        name="email"
+        autoComplete="email"
         key={form.key("email")}
         {...form.getInputProps("email")}
         withAsterisk
@@ -21,11 +23,15 @@ export default function Step3({
       <FormRow>
         <TextInput
           label="Telefon"
+          name="phone"
+          autoComplete="phone"
           key={form.key("phone")}
           {...form.getInputProps("phone")}
         />
         <TextInput
           label="Handy"
+          name="mobile"
+          autoComplete="mobile"
           key={form.key("mobile")}
           {...form.getInputProps("mobile")}
         />
