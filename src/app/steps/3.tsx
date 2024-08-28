@@ -1,14 +1,21 @@
+"use client";
 import { UseFormReturnType } from "@mantine/form";
 import Title from "../components/title";
-import { FocusTrap, TextInput } from "@mantine/core";
+import { TextInput } from "@mantine/core";
 import { FormValues } from "../form";
 import { FormRow, FormWrapper } from "../components/form";
+import { useEffect, useRef } from "react";
 
 export default function Step3({
   form,
 }: {
   form: UseFormReturnType<FormValues>;
 }) {
+  const focused = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    focused.current?.focus();
+  });
+
   return (
     <FormWrapper>
       <Title text="Kommunikation" />
@@ -18,6 +25,7 @@ export default function Step3({
         autoComplete="email"
         key={form.key("email")}
         {...form.getInputProps("email")}
+        ref={focused}
         withAsterisk
       />
       <FormRow>

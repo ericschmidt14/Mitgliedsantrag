@@ -2,7 +2,7 @@
 import { UseFormReturnType } from "@mantine/form";
 import Title from "../components/title";
 import { TextInput } from "@mantine/core";
-
+import { useEffect, useRef } from "react";
 import { FormValues } from "../form";
 import { FormRow, FormWrapper } from "../components/form";
 
@@ -11,6 +11,11 @@ export default function Step2({
 }: {
   form: UseFormReturnType<FormValues>;
 }) {
+  const focused = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    focused.current?.focus();
+  });
+
   return (
     <FormWrapper>
       <Title text="Adresse" />
@@ -21,6 +26,7 @@ export default function Step2({
         autoComplete="street"
         key={form.key("street")}
         {...form.getInputProps("street")}
+        ref={focused}
         withAsterisk
       />
       <FormRow asymmetric>

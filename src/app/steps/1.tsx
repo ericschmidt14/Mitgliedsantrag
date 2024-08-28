@@ -1,3 +1,4 @@
+"use cient";
 import Title from "../components/title";
 import {
   Autocomplete,
