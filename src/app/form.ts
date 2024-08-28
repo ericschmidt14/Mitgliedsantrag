@@ -1,4 +1,9 @@
 export const getInitialValues = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth();
+  const firstDayOfNextMonth = new Date(year, month + 1, 1);
+
   return {
     gender: "m",
     title: "",
@@ -12,7 +17,7 @@ export const getInitialValues = () => {
     email: "",
     phone: "",
     mobile: "",
-    entryDate: new Date(),
+    entryDate: firstDayOfNextMonth,
     membershipType: "",
     advertNumber: "",
     ofcnNumber: "",
