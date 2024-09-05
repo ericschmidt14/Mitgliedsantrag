@@ -1,11 +1,6 @@
 "use cient";
 import Title from "../components/title";
-import {
-  Autocomplete,
-  SegmentedControl,
-  Select,
-  TextInput,
-} from "@mantine/core";
+import { Autocomplete, SegmentedControl, TextInput } from "@mantine/core";
 import Label from "../components/label";
 import { UseFormReturnType } from "@mantine/form";
 import { FormValues } from "../form";
@@ -80,6 +75,7 @@ export default function Step1({
           valueFormat="DD.MM.YYYY"
           label="Geburtstag"
           placeholder="TT.MM.JJJJ"
+          excludeDate={(d) => d > new Date()}
           key={form.key("dob")}
           {...form.getInputProps("dob")}
           leftSection={<IconCalendar size={16} />}
