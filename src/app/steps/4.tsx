@@ -74,10 +74,11 @@ export default function Step4({
           <FileInput
             label="Bitte Ermäßigungsnachweis hochladen"
             placeholder="Zum Auswählen klicken"
-            accept="image/png,image/jpeg"
+            accept="image/png,image/jpeg,application/pdf"
             clearable
+            key={form.key("proof")}
+            {...form.getInputProps("proof")}
             leftSection={<IconFileText size={16} />}
-            withAsterisk
           />
         )}
         <TextInput

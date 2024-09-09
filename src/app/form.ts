@@ -14,6 +14,7 @@ export const getInitialValues = () => {
     mobile: "",
     entryDate: new Date(),
     membershipType: "",
+    proof: null,
     advertNumber: "",
     ofcnNumber: "",
     ofcnName: "",
@@ -43,6 +44,7 @@ export interface FormValues {
   mobile?: string;
   entryDate: Date;
   membershipType: string;
+  proof?: File | null;
   advertNumber?: string;
   ofcnNumber?: string;
   ofcnName?: string;
