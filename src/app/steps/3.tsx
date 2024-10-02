@@ -14,7 +14,7 @@ export default function Step3({
   const focused = useRef<HTMLInputElement>(null);
   useEffect(() => {
     focused.current?.focus();
-  });
+  }, []);
 
   return (
     <FormWrapper>

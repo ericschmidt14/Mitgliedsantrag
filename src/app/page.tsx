@@ -31,16 +31,17 @@ export default function Home() {
       <form
         className="w-full md:w-[768px] p-4 flex flex-col"
         onSubmit={form.onSubmit((values) => {
-          fetch("/api/save", {
-            method: "POST",
-            body: JSON.stringify(values, null, 2),
-          })
-            .then((res) => res.text())
-            .then((data) => {
-              console.log(data);
-              nextStep();
-            })
-            .catch((error) => console.error(error));
+          console.log(values);
+          // fetch("/api/save", {
+          //   method: "POST",
+          //   body: JSON.stringify(values, null, 2),
+          // })
+          //   .then((res) => res.text())
+          //   .then((data) => {
+          //     console.log(data);
+          //     nextStep();
+          //   })
+          //   .catch((error) => console.error(error));
         })}
       >
         <Stepper

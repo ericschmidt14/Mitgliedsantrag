@@ -96,8 +96,8 @@ export default function Step4({
             />
             <TextInput
               label="Offizieller Fanclub-Name"
-              key={form.key("advertNumber")}
-              {...form.getInputProps("advertNumber")}
+              key={form.key("ofcnName")}
+              {...form.getInputProps("ofcnName")}
             />
           </FormRow>
         </Fieldset>
