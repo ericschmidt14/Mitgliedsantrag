@@ -1,10 +1,10 @@
 "use client";
-import { UseFormReturnType } from "@mantine/form";
-import Title from "../components/title";
 import { TextInput } from "@mantine/core";
-import { FormValues } from "../form";
-import { FormRow, FormWrapper } from "../components/form";
+import { UseFormReturnType } from "@mantine/form";
 import { useEffect, useRef } from "react";
+import { FormRow, FormWrapper } from "../components/form";
+import Title from "../components/title";
+import { FormValues } from "../form";
 
 export default function Step3({
   form,
@@ -37,7 +37,7 @@ export default function Step3({
           {...form.getInputProps("phone")}
         />
         <TextInput
-          label="Handy"
+          label="Mobil"
           name="mobile"
           autoComplete="mobile"
           key={form.key("mobile")}

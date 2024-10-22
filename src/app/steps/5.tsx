@@ -1,9 +1,9 @@
 "use client";
-import { UseFormReturnType } from "@mantine/form";
-import Title from "../components/title";
 import { Checkbox, Divider, TextInput } from "@mantine/core";
-import { FormValues } from "../form";
+import { UseFormReturnType } from "@mantine/form";
 import { FormWrapper } from "../components/form";
+import Title from "../components/title";
+import { FormValues } from "../form";
 import { formatIBAN } from "../utils";
 
 export default function Step5({

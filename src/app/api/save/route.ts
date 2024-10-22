@@ -1,5 +1,7 @@
+import { FCN_WEB_API } from "@/app/constants";
+
 export async function POST(request: Request) {
-  const res = await fetch("/Member/Save", {
+  const res = await fetch(`${FCN_WEB_API}/Member/Save`, {
     method: "POST",
     headers: {
       Accept: "*/*",

@@ -1,9 +1,9 @@
 "use client";
+import { Select, TextInput } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
+import { FormWrapper } from "../components/form";
 import Title from "../components/title";
 import { FormValues } from "../form";
-import { FormWrapper } from "../components/form";
-import { Select, TextInput } from "@mantine/core";
 
 export default function Step6({
   form,
@@ -52,7 +52,7 @@ export default function Step6({
         data={["Digital-Version", "Print-Version"]}
         checkIconPosition="right"
         label="Mitgliedermagazin"
-        description="Bitte senden Sie mir die MItgliederzeitung als"
+        description="Bitte senden Sie mir die Mitgliederzeitung als"
       />
       <p>
         Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,

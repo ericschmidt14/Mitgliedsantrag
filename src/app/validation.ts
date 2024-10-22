@@ -57,6 +57,15 @@ export function validateForm(active: number, values: FormValues) {
     };
   }
 
+  if (active === 5) {
+    return {
+      magazin: notEmptyValidation(
+        values.magazine,
+        "Bitte Medium für Mitgliedermagazin wählen"
+      ),
+    };
+  }
+
   return {};
 }
 

@@ -52,16 +52,25 @@ export default function Home() {
               2
             )
           );
-          // fetch("/api/save", {
-          //   method: "POST",
-          //   body: JSON.stringify(values, null, 2),
-          // })
-          //   .then((res) => res.text())
-          //   .then((data) => {
-          //     console.log(data);
-          //     nextStep();
-          //   })
-          //   .catch((error) => console.error(error));
+          fetch("/api/save", {
+            method: "POST",
+            body: JSON.stringify(
+              {
+                ...values,
+                certificate:
+                  values.certificate &&
+                  (await fileToBase64(values.certificate)),
+              },
+              null,
+              2
+            ),
+          })
+            .then((res) => res.text())
+            .then((data) => {
+              console.log(data);
+              nextStep();
+            })
+            .catch((error) => console.error(error));
         })}
       >
         <Stepper

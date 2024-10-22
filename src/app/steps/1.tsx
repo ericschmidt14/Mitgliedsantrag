@@ -1,14 +1,14 @@
 "use cient";
-import Title from "../components/title";
 import { Autocomplete, SegmentedControl, TextInput } from "@mantine/core";
-import Label from "../components/label";
+import { DatePickerInput, DatesProvider } from "@mantine/dates";
 import { UseFormReturnType } from "@mantine/form";
-import { FormValues } from "../form";
-import { FormRow, FormWrapper } from "../components/form";
+import { IconCalendar } from "@tabler/icons-react";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { DatePickerInput, DatesProvider } from "@mantine/dates";
-import { IconCalendar } from "@tabler/icons-react";
+import { FormRow, FormWrapper } from "../components/form";
+import Label from "../components/label";
+import Title from "../components/title";
+import { FormValues } from "../form";
 
 export default function Step1({
   form,
@@ -41,11 +41,7 @@ export default function Step1({
               key={form.key("gender")}
               {...form.getInputProps("gender")}
               fullWidth
-              data={[
-                { label: "Männlich", value: "m" },
-                { label: "Weiblich", value: "w" },
-                { label: "Divers", value: "d" },
-              ]}
+              data={["Männlich", "Weiblich", "Divers"]}
               transitionDuration={500}
               transitionTimingFunction="linear"
             />
