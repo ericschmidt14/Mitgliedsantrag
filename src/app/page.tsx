@@ -1,15 +1,15 @@
 "use client";
-import { useState } from "react";
-import { Stepper, Button, rem } from "@mantine/core";
+import { Button, rem, Stepper } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { useState } from "react";
 import { FormValues, getInitialValues } from "./form";
-import { validateForm } from "./validation";
 import Step1 from "./steps/1";
 import Step2 from "./steps/2";
 import Step3 from "./steps/3";
 import Step4 from "./steps/4";
 import Step5 from "./steps/5";
 import Step6 from "./steps/6";
+import { validateForm } from "./validation";
 
 export default function Home() {
   const [active, setActive] = useState(0);
@@ -26,12 +26,32 @@ export default function Home() {
   const prevStep = () =>
     setActive((current) => (current > 0 ? current - 1 : current));
 
+  const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = (error) => reject(error);
+    });
+  };
+
   return (
     <section className="flex flex-col justify-center items-center">
       <form
         className="w-full md:w-[768px] p-4 flex flex-col"
-        onSubmit={form.onSubmit((values) => {
-          console.log(values);
+        onSubmit={form.onSubmit(async (values) => {
+          console.log(
+            JSON.stringify(
+              {
+                ...values,
+                certificate:
+                  values.certificate &&
+                  (await fileToBase64(values.certificate)),
+              },
+              null,
+              2
+            )
+          );
           // fetch("/api/save", {
           //   method: "POST",
           //   body: JSON.stringify(values, null, 2),

@@ -1,15 +1,15 @@
 "use client";
-import { UseFormReturnType } from "@mantine/form";
-import Title from "../components/title";
-import "dayjs/locale/de";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-import { FormValues } from "../form";
-import { FormRow, FormWrapper } from "../components/form";
-import { DatePickerInput, DatesProvider } from "@mantine/dates";
 import { Fieldset, FileInput, Select, TextInput } from "@mantine/core";
+import { DatePickerInput, DatesProvider } from "@mantine/dates";
+import { UseFormReturnType } from "@mantine/form";
 import { IconCalendar, IconFileText } from "@tabler/icons-react";
 import { differenceInYears } from "date-fns";
+import dayjs from "dayjs";
+import "dayjs/locale/de";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+import { FormRow, FormWrapper } from "../components/form";
+import Title from "../components/title";
+import { FormValues } from "../form";
 
 export default function Step4({
   form,
@@ -73,12 +73,13 @@ export default function Step4({
         {form.values.membershipType === "Schwerbehinderte – 40€" && (
           <FileInput
             label="Bitte Ermäßigungsnachweis hochladen"
-            placeholder="Zum Auswählen klicken"
+            placeholder="Zum Auswählen klicken (PDF, PNG oder JPG)"
             accept="image/png,image/jpeg,application/pdf"
             clearable
-            key={form.key("proof")}
-            {...form.getInputProps("proof")}
+            key={form.key("certificate")}
+            {...form.getInputProps("certificate")}
             leftSection={<IconFileText size={16} />}
+            withAsterisk
           />
         )}
         <TextInput
