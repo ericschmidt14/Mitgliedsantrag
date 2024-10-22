@@ -100,6 +100,14 @@ export default function Page() {
         <Title text="Dein Antrag" />
         {entry ? (
           <>
+            <p>
+              Vielen Dank für deinen Antrag! Wir freuen uns, dass du ein
+              Mitglied der Club-Familie sein möchtest.
+            </p>
+            <p>
+              Bitte überprüfe die Daten auf ihre Richtigkeit und bestätige deine
+              Anmeldung.
+            </p>
             <Fieldset legend="Zusammenfassung">
               <Table className="responsive-table">
                 <Table.Tbody>
@@ -119,7 +127,7 @@ export default function Page() {
               </Table>
             </Fieldset>
             <Button fullWidth onClick={handleConfirm}>
-              Jetzt Anmeldung bestätigen
+              Anmeldung jetzt bestätigen
             </Button>
           </>
         ) : (
