@@ -35,6 +35,7 @@ export default function Page() {
         radius="md"
         w="400"
         className="flex flex-col items-center gap-4"
+        withBorder
       >
         {error ? (
           <>
