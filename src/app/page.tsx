@@ -122,8 +122,8 @@ export default function Home() {
             <Step6 form={form} />
           </Stepper.Step>
           <Stepper.Completed>
-            <b>Antrag erfolgreich abgeschickt!</b> Du erhältst in Kürze weitere
-            Informationen.
+            <b>Antrag erfolgreich abgeschickt!</b> Bitte überprüfe das
+            angegebene Postfach.
           </Stepper.Completed>
         </Stepper>
 

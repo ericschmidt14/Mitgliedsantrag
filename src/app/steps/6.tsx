@@ -38,7 +38,7 @@ export default function Step6({
         ]}
         checkIconPosition="right"
         label="Mitgliedschaft durch"
-        description="Wie bist du auf die Mitgliedschaft aufmerksam geworden?"
+        description="Wie bist Du auf die Mitgliedschaft aufmerksam geworden?"
       />
       {form.values.advertisement === OTHER && (
         <TextInput
@@ -52,7 +52,7 @@ export default function Step6({
         data={["Digital-Version", "Print-Version"]}
         checkIconPosition="right"
         label="Mitgliedermagazin"
-        description="Bitte senden Sie mir die Mitgliederzeitung als"
+        description="Bitte sendet mir die Mitgliederzeitung als"
       />
       <p>
         Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,
@@ -68,7 +68,7 @@ export default function Step6({
         die Zukunft per E-Mail an mitglied@fcn.de widerrufen.
       </p>
       <p>
-        Wir setzen Sie davon in Kenntnis, dass durch den Widerruf der
+        Wir setzen Dich davon in Kenntnis, dass durch den Widerruf der
         Einwilligung die Rechtmäßigkeit der aufgrund der Einwilligung bis zum
         Widerruf erfolgten Verarbeitung nicht berührt wird.
       </p>

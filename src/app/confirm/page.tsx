@@ -1,7 +1,7 @@
 "use client";
 import { Paper } from "@mantine/core";
 import {
-  IconCheck,
+  IconCircleCheck,
   IconExclamationCircle,
   IconLoader2,
 } from "@tabler/icons-react";
@@ -39,18 +39,18 @@ export default function Page() {
       >
         {error ? (
           <>
-            <IconExclamationCircle size={48} />
+            <IconExclamationCircle size={48} color="#aa1124" />
             <p>
               Leider ist bei der Bestätigung etwas schief gelaufen! Bitte melde
-              dich bei uns unter{" "}
+              Dich bei uns unter{" "}
               <a href="mailto:mitglied@fcn.de">mitglied@fcn.de</a>.
             </p>
           </>
         ) : confirm ? (
           <>
-            <IconCheck size={48} />
+            <IconCircleCheck size={48} />
             <p>
-              Vielen Dank für deinen Antrag! Wir freuen uns, dich in Kürze als
+              Vielen Dank für Deinen Antrag! Wir freuen uns, Dich in Kürze als
               Mitglied der Club-Familie begrüßen zu dürfen.
             </p>
           </>
