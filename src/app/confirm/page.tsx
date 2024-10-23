@@ -41,8 +41,8 @@ export default function Page() {
           <>
             <IconExclamationCircle size={48} color="#aa1124" />
             <p>
-              Leider ist bei der Bestätigung etwas schief gelaufen! Bitte melde
-              Dich bei uns unter{" "}
+              Leider ist bei der Bestätigung deiner Mail-Adresse etwas schief
+              gelaufen! Bitte melde Dich bei uns unter{" "}
               <a href="mailto:mitglied@fcn.de">mitglied@fcn.de</a>.
             </p>
           </>
@@ -50,7 +50,7 @@ export default function Page() {
           <>
             <IconCircleCheck size={48} />
             <p>
-              Vielen Dank für Deinen Antrag! Wir freuen uns, Dich in Kürze als
+              <b>E-Mail-Adresse bestätigt!</b> Wir freuen uns, Dich in Kürze als
               Mitglied der Club-Familie begrüßen zu dürfen.
             </p>
           </>

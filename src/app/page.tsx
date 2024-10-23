@@ -2,6 +2,8 @@
 import { Button, rem, Stepper } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useState } from "react";
+import { FormWrapper } from "./components/form";
+import Title from "./components/title";
 import { FormValues, getInitialValues } from "./form";
 import Step1 from "./steps/1";
 import Step2 from "./steps/2";
@@ -40,18 +42,6 @@ export default function Home() {
       <form
         className="w-full md:w-[768px] p-4 flex flex-col"
         onSubmit={form.onSubmit(async (values) => {
-          console.log(
-            JSON.stringify(
-              {
-                ...values,
-                certificate:
-                  values.certificate &&
-                  (await fileToBase64(values.certificate)),
-              },
-              null,
-              2
-            )
-          );
           fetch("/api/save", {
             method: "POST",
             body: JSON.stringify(
@@ -66,8 +56,7 @@ export default function Home() {
             ),
           })
             .then((res) => res.text())
-            .then((data) => {
-              console.log(data);
+            .then(() => {
               nextStep();
             })
             .catch((error) => console.error(error));
@@ -122,8 +111,21 @@ export default function Home() {
             <Step6 form={form} />
           </Stepper.Step>
           <Stepper.Completed>
-            <b>Antrag erfolgreich abgeschickt!</b> Bitte überprüfe das
-            angegebene Postfach.
+            <FormWrapper>
+              <Title text="Antrag erfolgreich abgeschickt!" />
+              <p>Liebes Neu-Mitglied,</p>
+              <p>
+                vielen Dank für Deine Anmeldung beim 1. FC Nürnberg. <br />
+                Du solltest eine E-Mail erhalten haben die Du bestätigen musst.
+                Bitte überprüfe auch Deinen SPAM Ordner.
+              </p>
+
+              <p>
+                Beste Grüße vom Club
+                <br />
+                Dein Mitgliederservice des 1. FCN
+              </p>
+            </FormWrapper>
           </Stepper.Completed>
         </Stepper>
 
