@@ -10,7 +10,6 @@ export async function GET(
       Accept: "*/*",
     },
   });
-  const participants = res.status === 200 ? await res.json() : await res.text();
-
-  return Response.json(participants);
+  const ok = res.status;
+  return Response.json(ok);
 }

@@ -1,10 +1,10 @@
 "use client";
-import { UseFormReturnType } from "@mantine/form";
-import Title from "../components/title";
 import { TextInput } from "@mantine/core";
+import { UseFormReturnType } from "@mantine/form";
 import { useEffect, useRef } from "react";
-import { FormValues } from "../form";
 import { FormRow, FormWrapper } from "../components/form";
+import Title from "../components/title";
+import { FormValues } from "../form";
 
 export default function Step2({
   form,
