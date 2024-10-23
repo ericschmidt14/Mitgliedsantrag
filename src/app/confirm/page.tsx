@@ -41,8 +41,8 @@ export default function Page() {
           <>
             <IconExclamationCircle size={48} color="#aa1124" />
             <p>
-              Leider ist bei der Bestätigung deiner Mail-Adresse etwas schief
-              gelaufen! Bitte melde Dich bei uns unter{" "}
+              Leider ist bei der Bestätigung Deiner Mail-Adresse etwas schief
+              gelaufen. Bitte melde Dich unter{" "}
               <a href="mailto:mitglied@fcn.de">mitglied@fcn.de</a>.
             </p>
           </>
