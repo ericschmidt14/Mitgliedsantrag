@@ -37,8 +37,7 @@ export default function Step6({
           OTHER,
         ]}
         checkIconPosition="right"
-        label="Mitgliedschaft durch"
-        description="Wie bist Du auf die Mitgliedschaft aufmerksam geworden?"
+        label="Wie bist Du auf die Mitgliedschaft aufmerksam geworden?"
       />
       {form.values.advertisement === OTHER && (
         <TextInput
@@ -51,8 +50,8 @@ export default function Step6({
         {...form.getInputProps("magazine")}
         data={["Digital-Version", "Print-Version"]}
         checkIconPosition="right"
-        label="Mitgliedermagazin"
-        description="Bitte sendet mir die Mitgliederzeitung als"
+        allowDeselect={false}
+        label="Bitte sendet mir die Mitgliederzeitung als"
       />
       <p>
         Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,

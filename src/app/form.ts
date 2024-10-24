@@ -25,7 +25,7 @@ export const getInitialValues = () => {
     acceptPrivacy: false,
     advertisement: "",
     advertisementOther: "",
-    magazine: "",
+    magazine: "Digital-Version",
   };
 };
 
