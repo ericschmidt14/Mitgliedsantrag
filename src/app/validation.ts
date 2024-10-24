@@ -19,7 +19,10 @@ export function validateForm(active: number, values: FormValues) {
         values.street,
         "Bitte Straße & Nummer angeben"
       ),
-      postalCode: postalCodeValidation(values.postalCode),
+      postalCode: notEmptyValidation(
+        values.postalCode,
+        "Bitte Postleitzahl angeben"
+      ),
       city: notEmptyValidation(values.city, "Bitte Wohnort angeben"),
       country: notEmptyValidation(values.country, "Bitte Land angeben"),
     };
@@ -71,12 +74,6 @@ export function validateForm(active: number, values: FormValues) {
 
 const notEmptyValidation = (value: string | undefined, error: string) => {
   return value == undefined || value.trim().length < 1 ? error : null;
-};
-
-const postalCodeValidation = (code: string) => {
-  return /^[0-9][0-9][0-9][0-9][0-9]$/.test(code)
-    ? null
-    : "Ungültige Postleitzahl";
 };
 
 const emailValidation = (email: string) => {
