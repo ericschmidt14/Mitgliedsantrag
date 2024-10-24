@@ -130,7 +130,7 @@ export default function Home() {
         </Stepper>
 
         <div className="w-full m-auto flex justify-between px-4">
-          {active > 0 ? (
+          {active > 0 && active < 6 ? (
             <Button variant="transparent" onClick={prevStep}>
               Zurück
             </Button>
