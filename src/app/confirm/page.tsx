@@ -22,7 +22,6 @@ export default function Page() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         res === 200 ? setConfirm(true) : setError(true);
       })
       .catch((error) => console.error(error));
