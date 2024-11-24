@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
-import "./globals.css";
-import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
+import type { Metadata } from "next";
 import { Suspense } from "react";
-import Header from "./components/header";
 import Footer from "./components/footer";
+import Header from "./components/header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "1. FCN Mitgliedsantrag",
@@ -46,7 +46,7 @@ export default function RootLayout({
         <MantineProvider theme={theme} defaultColorScheme="dark">
           <Suspense>
             <main className="min-h-screen flex flex-col justify-between">
-              <div className="flex flex-col justify-between gap-8">
+              <div className="flex flex-col justify-between">
                 <Header />
                 {children}
               </div>

@@ -1,8 +1,9 @@
 "use client";
-import { Button, rem, Stepper } from "@mantine/core";
+import { Button, Stepper } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useState } from "react";
 import { FormWrapper } from "./components/form";
+import StepperIndicator from "./components/stepper";
 import Title from "./components/title";
 import { FormValues, getInitialValues } from "./form";
 import Step1 from "./steps/1";
@@ -39,6 +40,7 @@ export default function Home() {
 
   return (
     <section className="flex flex-col justify-center items-center">
+      <StepperIndicator steps={6} active={active} />
       <form
         className="w-full md:w-[768px] p-4 flex flex-col"
         onSubmit={form.onSubmit(async (values) => {
@@ -69,27 +71,11 @@ export default function Home() {
           size="sm"
           styles={{
             content: {
-              position: "relative",
               margin: "16px auto",
               padding: "48px 32px",
-              border:
-                "calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-dark-6)",
-              borderRadius: "var(--mantine-radius-md)",
-              background: "rgba(255, 255, 255, 0.0925)",
-              boxShadow: "var(--mantine-shadow-xl)",
             },
-            steps: {
-              width: "320px",
-              margin: "0 auto",
-            },
-            stepBody: {
-              display: "none",
-            },
-            stepIcon: { boxShadow: "var(--mantine-shadow-xl)" },
-            separator: {
-              marginLeft: rem(-2),
-              marginRight: rem(-2),
-            },
+            step: { display: "none" },
+            steps: { display: "none" },
           }}
         >
           <Stepper.Step>
@@ -129,7 +115,7 @@ export default function Home() {
           </Stepper.Completed>
         </Stepper>
 
-        <div className="w-full m-auto flex justify-between px-4">
+        <div className="w-full m-auto flex justify-between px-8">
           {active > 0 && active < 6 ? (
             <Button variant="transparent" onClick={prevStep}>
               Zurück
