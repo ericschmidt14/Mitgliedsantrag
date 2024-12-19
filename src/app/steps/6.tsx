@@ -1,8 +1,7 @@
 "use client";
-import { SegmentedControl, Select, TextInput } from "@mantine/core";
+import { Checkbox, Select, TextInput } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { FormWrapper } from "../components/form";
-import Label from "../components/label";
 import Title from "../components/title";
 import { FormValues } from "../form";
 
@@ -62,15 +61,12 @@ export default function Step6({
         allowDeselect={false}
         label="Bitte sendet mit die Einladung zur Jahreshauptversammlung als"
       />
-      <div>
-        <Label text="Ich möchte meinen Mitgliedsausweis digital erhalten." />
-        <SegmentedControl
-          data={["Ja", "Nein"]}
-          fullWidth
-          key={form.key("digitalId")}
-          {...form.getInputProps("digitalId")}
-        />
-      </div>
+      <Checkbox
+        label="Ich möchte meinen Mitgliedsausweis digital erhalten."
+        key={form.key("digitalId")}
+        {...form.getInputProps("digitalId", { type: "checkbox" })}
+        className="mt-2"
+      />
       {form.values.magazine === "Digital-Version" && (
         <p className="muted small">
           Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,

@@ -27,7 +27,7 @@ export const getInitialValues = () => {
     advertisementOther: "",
     magazine: "Digital-Version",
     invitation: "Digital-Version",
-    digitalId: "Ja",
+    digitalId: false,
   };
 };
 
@@ -59,5 +59,5 @@ export interface FormValues {
   advertisementOther?: string;
   magazine: string;
   invitation: string;
-  digitalId: string;
+  digitalId: boolean;
 }
