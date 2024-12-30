@@ -9,8 +9,9 @@ export default function Header() {
       <Link href="/" className="logo">
         <div className="flex items-center gap-1">
           <Image src="/logo.svg" alt="1. FCN Logo" width={48} height={48} />
-          <p className="text-2xl uppercase">
-            Mitglieds<b>antrag</b>
+          <p className="text-2xl">
+            <b>Mitglieds</b>
+            <i>antrag</i>
           </p>
         </div>
       </Link>
