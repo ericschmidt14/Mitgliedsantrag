@@ -1,6 +1,6 @@
 "use client";
 import { Button, Checkbox, Paper } from "@mantine/core";
-import { IconMailFast } from "@tabler/icons-react";
+import { IconDeviceFloppy } from "@tabler/icons-react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Title from "../components/title";
@@ -18,7 +18,7 @@ export default function Page() {
         p="xl"
         radius="md"
         w="666"
-        className="flex flex-col items-start gap-8"
+        className="flex flex-col items-start gap-4"
         withBorder
       >
         <Title text="Mitgliederumfrage 2025 Q1" />
@@ -45,24 +45,20 @@ export default function Page() {
             checked={invitation}
             onChange={(e) => setInvitation(e.currentTarget.checked)}
           />
-          <Button type="submit" leftSection={<IconMailFast size={16} />}>
-            Absenden
-          </Button>
         </form>
-        <div className="flex flex-col gap-4">
-          <p className="muted small">
-            Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,
-            Valznerweiherstraße 200, 90480 Nürnberg zu den oben genannten Themen
-            E-Mails senden darf. Mir ist bewusst, dass ich diese Einwilligung
-            jederzeit mit Wirkung für die Zukunft durch erneutes Absenden dieses
-            Formulars widerrufen kann.
-          </p>
-          <p className="muted small">
-            Wir setzen Dich davon in Kenntnis, dass durch den Widerruf der
-            Einwilligung die Rechtmäßigkeit der aufgrund der Einwilligung bis
-            zum Widerruf erfolgten Verarbeitung nicht berührt wird.
-          </p>
-        </div>
+        <p className="muted small">
+          Ich bin damit einverstanden, dass der 1. Fußball-Club Nürnberg e.V.
+          mir regelmäßig Informationen zu den oben genannten Themen per E-Mail
+          an die angegebene E-Mail-Adresse zukommen lässt. Meine Einwilligung
+          kann ich jederzeit mit Wirkung für die Zukunft widerrufen.
+        </p>
+        <Button
+          type="submit"
+          fullWidth
+          leftSection={<IconDeviceFloppy size={16} />}
+        >
+          Speichern
+        </Button>
       </Paper>
     </div>
   );
