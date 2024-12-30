@@ -1,9 +1,9 @@
 "use client";
-import { Checkbox, Select, TextInput } from "@mantine/core";
+import { Checkbox, Divider, Select, TextInput } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { FormWrapper } from "../components/form";
 import Title from "../components/title";
-import { FormValues } from "../form";
+import { FormValues } from "../form/form";
 
 export default function Step6({
   form,
@@ -61,33 +61,30 @@ export default function Step6({
         allowDeselect={false}
         label="Bitte sendet mit die Einladung zur Jahreshauptversammlung als"
       />
+      <Divider label="Mitgliedsausweis" />
       <Checkbox
         label="Ich möchte meinen Mitgliedsausweis digital erhalten."
+        description="Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,
+        Valznerweiherstraße 200, 90480 Nürnberg die Mitgliederzeitung, die
+        Einladung zur Jahreshauptversammlung und den Mitgliedsausweis per E-Mail
+        senden darf. Mir ist bewusst, dass ich diese Einwilligung jederzeit mit
+        Wirkung für die Zukunft, per E-Mail an mitglied@fcn.de widerrufen kann."
         key={form.key("digitalId")}
         {...form.getInputProps("digitalId", { type: "checkbox" })}
         className="mt-2"
       />
-      {form.values.magazine === "Digital-Version" && (
-        <p className="muted small">
-          Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,
-          Valznerweiherstraße 200, 90480 Nürnberg die Mitgliederzeitung per
-          E-Mail senden darf. Mir ist bewusst, dass ich diese Einwilligung
-          jederzeit mit Wirkung für die Zukunft, per E-Mail an mitglied@fcn.de
-          widerrufen kann.
-        </p>
-      )}
-      <p className="muted small">
-        Ich bin damit einverstanden, dass der 1. Fußball-Club Nürnberg e.V. mir
+      <Divider label="Newsletter" />
+      <Checkbox
+        label="Ich möchte den Newsletter erhalten."
+        description="Ich bin damit einverstanden, dass der 1. Fußball-Club Nürnberg e.V. mir
         regelmäßig Informationen zu ihren Dienstleistungen (Newsletter,
         Veranstaltungen, etc.) per E-Mail an die angegebene E-Mail-Adresse
         zukommen lässt. Meine Einwilligung kann ich jederzeit mit Wirkung für
-        die Zukunft per E-Mail an mitglied@fcn.de widerrufen.
-      </p>
-      <p className="muted small">
-        Wir setzen Dich davon in Kenntnis, dass durch den Widerruf der
-        Einwilligung die Rechtmäßigkeit der aufgrund der Einwilligung bis zum
-        Widerruf erfolgten Verarbeitung nicht berührt wird.
-      </p>
+        die Zukunft per E-Mail an mitglied@fcn.de widerrufen."
+        key={form.key("newsletter")}
+        {...form.getInputProps("newsletter", { type: "checkbox" })}
+        className="mt-2"
+      />
     </FormWrapper>
   );
 }

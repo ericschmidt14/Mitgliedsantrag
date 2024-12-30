@@ -4,7 +4,7 @@ import { UseFormReturnType } from "@mantine/form";
 import { useEffect, useRef } from "react";
 import { FormRow, FormWrapper } from "../components/form";
 import Title from "../components/title";
-import { FormValues } from "../form";
+import { FormValues } from "../form/form";
 
 export default function Step3({
   form,

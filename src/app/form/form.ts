@@ -20,6 +20,7 @@ export const getInitialValues = () => {
     ofcnName: "",
     depositor: "",
     iban: "",
+    bic: "",
     acceptSepa: false,
     acceptCharter: false,
     acceptPrivacy: false,
@@ -28,6 +29,7 @@ export const getInitialValues = () => {
     magazine: "Digital-Version",
     invitation: "Digital-Version",
     digitalId: false,
+    newsletter: false,
   };
 };
 
@@ -52,6 +54,7 @@ export interface FormValues {
   ofcnName?: string;
   depositor: string;
   iban: string;
+  bic: string;
   acceptSepa: boolean;
   acceptCharter: boolean;
   acceptPrivacy: boolean;
@@ -60,4 +63,5 @@ export interface FormValues {
   magazine: string;
   invitation: string;
   digitalId: boolean;
+  newsletter: boolean;
 }

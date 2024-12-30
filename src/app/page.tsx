@@ -1,18 +1,19 @@
 "use client";
 import { Button, Stepper } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import dayjs from "dayjs";
 import { useState } from "react";
 import { FormWrapper } from "./components/form";
 import StepperIndicator from "./components/stepper";
 import Title from "./components/title";
-import { FormValues, getInitialValues } from "./form";
+import { FormValues, getInitialValues } from "./form/form";
+import { validateForm } from "./form/validation";
 import Step1 from "./steps/1";
 import Step2 from "./steps/2";
 import Step3 from "./steps/3";
 import Step4 from "./steps/4";
 import Step5 from "./steps/5";
 import Step6 from "./steps/6";
-import { validateForm } from "./validation";
 
 export default function Home() {
   const [active, setActive] = useState(0);
@@ -49,6 +50,7 @@ export default function Home() {
             body: JSON.stringify(
               {
                 ...values,
+                dob: dayjs(values.dob).format("YYYY-MM-DD"),
                 certificate:
                   values.certificate &&
                   (await fileToBase64(values.certificate)),

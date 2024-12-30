@@ -3,7 +3,7 @@ import { Checkbox, Divider, TextInput } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { FormWrapper } from "../components/form";
 import Title from "../components/title";
-import { FormValues } from "../form";
+import { FormValues } from "../form/form";
 import { formatIBAN } from "../utils";
 
 export default function Step5({
@@ -33,6 +33,12 @@ export default function Step5({
         onChange={(event) => {
           form.setFieldValue("iban", formatIBAN(event.currentTarget.value));
         }}
+        withAsterisk
+      />
+      <TextInput
+        label="BIC"
+        key={form.key("bic")}
+        {...form.getInputProps("bic")}
         withAsterisk
       />
       <p className="col-span-2 muted small">

@@ -9,7 +9,7 @@ import "dayjs/locale/de";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { FormRow, FormWrapper } from "../components/form";
 import Title from "../components/title";
-import { FormValues } from "../form";
+import { FormValues } from "../form/form";
 
 export default function Step4({
   form,

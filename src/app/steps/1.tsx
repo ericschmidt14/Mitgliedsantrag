@@ -8,7 +8,7 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 import { FormRow, FormWrapper } from "../components/form";
 import Label from "../components/label";
 import Title from "../components/title";
-import { FormValues } from "../form";
+import { FormValues } from "../form/form";
 
 export default function Step1({
   form,

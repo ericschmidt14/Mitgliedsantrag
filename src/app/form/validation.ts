@@ -1,5 +1,5 @@
+import { isValidIBAN } from "../utils";
 import { FormValues } from "./form";
-import { isValidIBAN } from "./utils";
 
 export function validateForm(active: number, values: FormValues) {
   if (active === 0) {
