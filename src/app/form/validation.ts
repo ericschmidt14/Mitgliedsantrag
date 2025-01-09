@@ -55,6 +55,7 @@ export function validateForm(active: number, values: FormValues) {
         "Bitte Kontoinhaber angeben"
       ),
       iban: ibanValidation(values.iban),
+      bic: notEmptyValidation(values.bic, "Bitte BIC angeben"),
       acceptCharter: values.acceptCharter ? null : "",
       acceptPrivacy: values.acceptPrivacy ? null : "",
     };
