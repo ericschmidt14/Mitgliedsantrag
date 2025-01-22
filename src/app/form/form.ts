@@ -15,6 +15,7 @@ export const getInitialValues = () => {
     entryDate: new Date(),
     membershipType: "",
     certificate: null,
+    certificateName: "",
     advertNumber: "",
     ofcnNumber: "",
     ofcnName: "",
@@ -49,6 +50,7 @@ export interface FormValues {
   entryDate: Date;
   membershipType: string;
   certificate?: File | null;
+  certificateName?: string;
   advertNumber?: string;
   ofcnNumber?: string;
   ofcnName?: string;

@@ -45,19 +45,20 @@ export default function Home() {
       <form
         className="w-full md:w-[768px] p-4 flex flex-col"
         onSubmit={form.onSubmit(async (values) => {
+          const data = {
+            ...values,
+            dob: dayjs(values.dob).format("YYYY-MM-DD"),
+            certificate:
+              values.certificate && (await fileToBase64(values.certificate)),
+          };
+
+          if (values.certificate) {
+            data.certificateName = values.certificate.name;
+          }
+
           fetch("/api/save", {
             method: "POST",
-            body: JSON.stringify(
-              {
-                ...values,
-                dob: dayjs(values.dob).format("YYYY-MM-DD"),
-                certificate:
-                  values.certificate &&
-                  (await fileToBase64(values.certificate)),
-              },
-              null,
-              2
-            ),
+            body: JSON.stringify(data, null, 2),
           })
             .then((res) => res.text())
             .then(() => {
