@@ -28,8 +28,7 @@ export const getInitialValues = () => {
     advertisement: "",
     advertisementOther: "",
     magazine: "Digital-Version",
-    invitation: "Digital-Version",
-    digitalId: false,
+    id: "Digital-Version",
     newsletter: false,
   };
 };
@@ -63,7 +62,6 @@ export interface FormValues {
   advertisement: string;
   advertisementOther?: string;
   magazine: string;
-  invitation: string;
-  digitalId: boolean;
+  id: string;
   newsletter: boolean;
 }

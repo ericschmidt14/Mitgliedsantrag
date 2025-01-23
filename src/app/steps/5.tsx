@@ -80,7 +80,7 @@ export default function Step5({
             datenschutzrechtlichen Bestimmungen. Nähere Informationen zum
             Datenschutz findest du{" "}
             <a
-              href="https://www.fcn.de/standards/datenschutzerklaerung/"
+              href="https://www.fcn.de/fans-mitgliedschaft/mitgliedschaft/datenschutz/"
               className="link"
               target="_blank"
             >

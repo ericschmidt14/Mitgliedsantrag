@@ -54,24 +54,12 @@ export default function Step6({
         label="Bitte sendet mir die Mitgliederzeitung als"
       />
       <Select
-        key={form.key("invitation")}
-        {...form.getInputProps("invitation")}
+        key={form.key("id")}
+        {...form.getInputProps("id")}
         data={["Digital-Version", "Print-Version"]}
         checkIconPosition="right"
         allowDeselect={false}
-        label="Bitte sendet mit die Einladung zur Jahreshauptversammlung als"
-      />
-      <Divider label="Mitgliedsausweis" />
-      <Checkbox
-        label="Ich möchte meinen Mitgliedsausweis digital erhalten."
-        description="Hiermit willige ich ein, dass mir der 1. Fußball-Club Nürnberg e.V.,
-        Valznerweiherstraße 200, 90480 Nürnberg die Mitgliederzeitung, die
-        Einladung zur Jahreshauptversammlung und den Mitgliedsausweis per E-Mail
-        senden darf. Mir ist bewusst, dass ich diese Einwilligung jederzeit mit
-        Wirkung für die Zukunft, per E-Mail an mitglied@fcn.de widerrufen kann."
-        key={form.key("digitalId")}
-        {...form.getInputProps("digitalId", { type: "checkbox" })}
-        className="mt-2"
+        label="Bitte sendet mir den Mitgliedsausweis als"
       />
       <Divider label="Newsletter" />
       <Checkbox
