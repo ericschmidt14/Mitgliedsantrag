@@ -19,10 +19,10 @@ export function validateForm(active: number, values: FormValues) {
         values.street,
         "Bitte Straße & Nummer angeben"
       ),
-      postalCode: notEmptyValidation(
-        values.postalCode,
-        "Bitte Postleitzahl angeben"
-      ),
+      postalCode:
+        values.postalCode == undefined || values.postalCode < 1
+          ? "Bitte Postleitzahl angeben"
+          : null,
       city: notEmptyValidation(values.city, "Bitte Wohnort angeben"),
       country: notEmptyValidation(values.country, "Bitte Land angeben"),
     };
@@ -56,8 +56,6 @@ export function validateForm(active: number, values: FormValues) {
       ),
       iban: ibanValidation(values.iban),
       bic: notEmptyValidation(values.bic, "Bitte BIC angeben"),
-      acceptCharter: values.acceptCharter ? null : "",
-      acceptPrivacy: values.acceptPrivacy ? null : "",
     };
   }
 
@@ -67,6 +65,7 @@ export function validateForm(active: number, values: FormValues) {
         values.magazine,
         "Bitte Medium für Mitgliedermagazin wählen"
       ),
+      acceptCharter: values.acceptCharter ? null : "",
     };
   }
 

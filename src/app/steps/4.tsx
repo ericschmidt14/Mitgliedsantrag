@@ -1,5 +1,11 @@
 "use client";
-import { Fieldset, FileInput, Select, TextInput } from "@mantine/core";
+import {
+  Fieldset,
+  FileInput,
+  NumberInput,
+  Select,
+  TextInput,
+} from "@mantine/core";
 import { DatePickerInput, DatesProvider } from "@mantine/dates";
 import { UseFormReturnType } from "@mantine/form";
 import { IconCalendar, IconFileText } from "@tabler/icons-react";
@@ -71,22 +77,33 @@ export default function Step4({
           />
         </FormRow>
         {form.values.membershipType === "Schwerbehinderte – 40€" && (
-          <FileInput
-            label="Bitte Ermäßigungsnachweis hochladen"
-            placeholder="Zum Auswählen klicken (PDF, PNG oder JPG)"
-            accept="image/png,image/jpeg,application/pdf"
-            clearable
-            key={form.key("certificate")}
-            {...form.getInputProps("certificate")}
-            leftSection={<IconFileText size={16} />}
-            withAsterisk
-          />
+          <>
+            <FileInput
+              label="Bitte Ermäßigungsnachweis hochladen"
+              placeholder="Zum Auswählen klicken (PDF, PNG oder JPG)"
+              accept="image/png,image/jpeg,application/pdf"
+              clearable
+              key={form.key("certificate")}
+              {...form.getInputProps("certificate")}
+              leftSection={<IconFileText size={16} />}
+              withAsterisk
+            />
+            <p className="small">
+              Mit Hochladen des Schwerbehindertenausweises willige ich gemäß
+              Art. 9 Abs. 2 lit a) DSGVO ein, dass der 1. FC Nürnberg e.V.
+              diesen Ausweis ausschließlich zum Zwecke der Überprüfung meiner
+              Schwerbehinderung für die Ermäßigung verwenden darf. Die
+              Einwilligung ist freiwillig und jederzeit für die Zukunft
+              widerrufbar.
+            </p>
+          </>
         )}
-        <TextInput
+        <NumberInput
           label="Geworben durch Mitglied"
           description="(Mitgliedsnummer angeben)"
           key={form.key("advertNumber")}
           {...form.getInputProps("advertNumber")}
+          hideControls
         />
         <Fieldset legend="Bereits Fanclub-Mitglied?">
           <FormRow>

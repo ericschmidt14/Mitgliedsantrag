@@ -6,7 +6,7 @@ export const getInitialValues = () => {
     lastName: "",
     dob: undefined,
     street: "",
-    postalCode: "",
+    postalCode: null,
     city: "",
     country: "Deutschland",
     email: "",
@@ -16,7 +16,7 @@ export const getInitialValues = () => {
     membershipType: "",
     certificate: null,
     certificateName: "",
-    advertNumber: "",
+    advertNumber: null,
     ofcnNumber: "",
     ofcnName: "",
     depositor: "",
@@ -24,7 +24,6 @@ export const getInitialValues = () => {
     bic: "",
     acceptSepa: false,
     acceptCharter: false,
-    acceptPrivacy: false,
     advertisement: "",
     advertisementOther: "",
     magazine: "Digital-Version",
@@ -40,7 +39,7 @@ export interface FormValues {
   lastName: string;
   dob?: Date;
   street: string;
-  postalCode: string;
+  postalCode: number | null;
   city: string;
   country: string;
   email: string;
@@ -50,7 +49,7 @@ export interface FormValues {
   membershipType: string;
   certificate?: File | null;
   certificateName?: string;
-  advertNumber?: string;
+  advertNumber?: number | null;
   ofcnNumber?: string;
   ofcnName?: string;
   depositor: string;
@@ -58,7 +57,6 @@ export interface FormValues {
   bic: string;
   acceptSepa: boolean;
   acceptCharter: boolean;
-  acceptPrivacy: boolean;
   advertisement: string;
   advertisementOther?: string;
   magazine: string;

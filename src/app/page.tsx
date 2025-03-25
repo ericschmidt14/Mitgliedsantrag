@@ -14,9 +14,12 @@ import Step3 from "./steps/3";
 import Step4 from "./steps/4";
 import Step5 from "./steps/5";
 import Step6 from "./steps/6";
+import Step7 from "./steps/7";
 
 export default function Home() {
   const [active, setActive] = useState(0);
+
+  const STEPS = 7;
 
   const form = useForm<FormValues>({
     validateInputOnChange: true,
@@ -25,7 +28,7 @@ export default function Home() {
   });
 
   const nextStep = () =>
-    setActive((current) => (current < 6 ? current + 1 : current));
+    setActive((current) => (current < STEPS ? current + 1 : current));
 
   const prevStep = () =>
     setActive((current) => (current > 0 ? current - 1 : current));
@@ -41,7 +44,7 @@ export default function Home() {
 
   return (
     <section className="flex flex-col justify-center items-center">
-      <StepperIndicator steps={6} active={active} />
+      <StepperIndicator steps={STEPS} active={active} />
       <form
         className="w-full md:w-[768px] p-4 flex flex-col"
         onSubmit={form.onSubmit(async (values) => {
@@ -102,6 +105,9 @@ export default function Home() {
           <Stepper.Step>
             <Step6 form={form} />
           </Stepper.Step>
+          <Stepper.Step>
+            <Step7 form={form} />
+          </Stepper.Step>
           <Stepper.Completed>
             <FormWrapper>
               <Title text="Antrag erfolgreich abgeschickt!" />
@@ -122,19 +128,19 @@ export default function Home() {
         </Stepper>
 
         <div className="w-full m-auto flex justify-between px-8">
-          {active > 0 && active < 6 ? (
+          {active > 0 && active < STEPS ? (
             <Button variant="transparent" onClick={prevStep}>
               Zurück
             </Button>
           ) : (
             <div />
           )}
-          {active < 5 && (
+          {active < STEPS - 1 && (
             <Button onClick={nextStep} disabled={!form.isValid()}>
               Weiter
             </Button>
           )}
-          {active === 5 && (
+          {active === STEPS - 1 && (
             <Button type="submit" disabled={!form.isValid()}>
               Antrag abschicken
             </Button>

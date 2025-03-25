@@ -1,5 +1,5 @@
 "use client";
-import { TextInput } from "@mantine/core";
+import { NumberInput, TextInput } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { useEffect, useRef } from "react";
 import { FormRow, FormWrapper } from "../components/form";
@@ -30,13 +30,14 @@ export default function Step2({
         withAsterisk
       />
       <FormRow asymmetric>
-        <TextInput
+        <NumberInput
           label="PLZ"
           name="postal"
           autoComplete="postal"
           key={form.key("postalCode")}
           {...form.getInputProps("postalCode")}
           withAsterisk
+          hideControls
         />
         <TextInput
           className="col-span-3"

@@ -80,7 +80,7 @@ article.small p {
   font-size: var(
     --input-description-size,
     calc(var(--mantine-font-size-sm) - calc(0.125rem * var(--mantine-scale)))
-  );
+  ) !important;
   line-height: 1.4;
 }
 
