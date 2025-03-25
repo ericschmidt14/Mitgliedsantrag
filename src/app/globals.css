@@ -113,10 +113,6 @@ article.small li {
 }
 
 @media (max-width: 640px) {
-  h3 {
-    font-size: 14px;
-  }
-
   .responsive-table tr {
     display: block;
     padding: 0.6rem 0rem;

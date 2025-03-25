@@ -1,11 +1,9 @@
-"use cient";
-import { Autocomplete, SegmentedControl, TextInput } from "@mantine/core";
-import { DatePickerInput, DatesProvider } from "@mantine/dates";
+"use client";
+import { SegmentedControl } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
-import { IconCalendar } from "@tabler/icons-react";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-import { FormRow, FormWrapper } from "../components/form";
+import { useMediaQuery } from "@mantine/hooks";
+import { IconGift, IconMoodKid, IconUserCircle } from "@tabler/icons-react";
+import { FormWrapper } from "../components/form";
 import Label from "../components/label";
 import Title from "../components/title";
 import { FormValues } from "../form/form";
@@ -15,69 +13,60 @@ export default function Step1({
 }: {
   form: UseFormReturnType<FormValues>;
 }) {
-  dayjs.extend(customParseFormat);
+  const isMobile = useMediaQuery("(max-width: 620px)");
+  const applicantTypes = [
+    {
+      label: "für mich.",
+      icon: <IconUserCircle size={48} stroke={1} />,
+      value: "self",
+    },
+    {
+      label: "für mein minderjähriges Kind.",
+      icon: <IconMoodKid size={48} stroke={1} />,
+      value: "parent",
+    },
+    {
+      label: "ein Geschenk.",
+      icon: <IconGift size={48} stroke={1} />,
+      value: "gift",
+    },
+  ];
 
   return (
-    <DatesProvider settings={{ locale: "de" }}>
-      <FormWrapper>
-        <Title text="Persönliche Daten" />
-        <FormRow>
-          <Autocomplete
-            key={form.key("title")}
-            {...form.getInputProps("title")}
-            data={[
-              "Dr.",
-              "Dr. med.",
-              "Dr.-Ing.",
-              "Dipl.-Ing.",
-              "Prof.",
-              "Prof. Dr.",
-            ]}
-            label="Titel"
-          />
-          <div>
-            <Label text="Geschlecht" withAsterisk />
-            <SegmentedControl
-              key={form.key("gender")}
-              {...form.getInputProps("gender")}
-              fullWidth
-              data={["Männlich", "Weiblich", "Divers"]}
-              transitionDuration={500}
-              transitionTimingFunction="linear"
-            />
-          </div>
-        </FormRow>
-        <FormRow>
-          <TextInput
-            label="Vorname"
-            name="fname"
-            autoComplete="given-name"
-            key={form.key("firstName")}
-            {...form.getInputProps("firstName")}
-            withAsterisk
-          />
-          <TextInput
-            label="Nachname"
-            name="lname"
-            autoComplete="family-name"
-            key={form.key("lastName")}
-            {...form.getInputProps("lastName")}
-            withAsterisk
-          />
-        </FormRow>
-        <DatePickerInput
-          defaultDate={new Date("1980-01-01")}
-          defaultLevel="decade"
-          valueFormat="DD.MM.YYYY"
-          label="Geburtstag"
-          placeholder="TT.MM.JJJJ"
-          excludeDate={(d) => d > new Date()}
-          key={form.key("dob")}
-          {...form.getInputProps("dob")}
-          leftSection={<IconCalendar size={16} />}
-          withAsterisk
+    <FormWrapper>
+      <Title text="Die Legende lebt durch dich" />
+      <p>
+        Du bist willensstark und leidensfähig? Oder eher locker und unaufgeregt?
+        Welcher Typ Du auch bist, egal, wo Du herkommst und wie Du aussiehst,
+        wie alt oder wie reich Du bist - wir haben Großes mit Dir vor: In den
+        nächsten Jahren wollen wir unsere Mitgliederzahl auf 50.000 verdoppeln.
+        Das ist ambitioniert, doch gemeinsam können wir es schaffen.
+      </p>
+      <p>
+        <b>Werde Mitglied - werde #TEILDERLEGENDE</b>
+      </p>
+      <div className="pt-16">
+        <Label text="Dieser Mitgliedsantrag ist ..." />
+        <SegmentedControl
+          key={form.key("applicantType")}
+          {...form.getInputProps("applicantType")}
+          fullWidth
+          data={applicantTypes.map((t) => {
+            return {
+              label: (
+                <div className="flex flex-col items-center gap-1 py-1">
+                  {t.icon}
+                  <p>{t.label}</p>
+                </div>
+              ),
+              value: t.value,
+            };
+          })}
+          orientation={isMobile ? "vertical" : "horizontal"}
+          transitionDuration={500}
+          transitionTimingFunction="linear"
         />
-      </FormWrapper>
-    </DatesProvider>
+      </div>
+    </FormWrapper>
   );
 }

@@ -97,7 +97,7 @@ export default function Step7({
         <Table.Tbody>
           {data.map((entry, index) => {
             return (
-              entry.value !== "" && (
+              entry.value?.toString().trim() !== "" && (
                 <Table.Tr key={index}>
                   <Table.Td>
                     <b>{entry.label}</b>

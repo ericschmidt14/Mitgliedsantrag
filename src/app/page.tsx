@@ -51,6 +51,8 @@ export default function Home() {
           const data = {
             ...values,
             dob: dayjs(values.dob).format("YYYY-MM-DD"),
+            parentDob:
+              values.parentDob && dayjs(values.parentDob).format("YYYY-MM-DD"),
             entryDate: dayjs(values.entryDate).format("YYYY-MM-DD"),
             certificate:
               values.certificate && (await fileToBase64(values.certificate)),

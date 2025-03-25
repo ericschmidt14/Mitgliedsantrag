@@ -3,6 +3,10 @@ import { FormValues } from "./form";
 
 export function validateForm(active: number, values: FormValues) {
   if (active === 0) {
+    return {};
+  }
+
+  if (active === 1) {
     return {
       firstName: notEmptyValidation(values.firstName, "Bitte Vornamen angeben"),
       lastName: notEmptyValidation(values.lastName, "Bitte Nachnamen angeben"),
@@ -10,11 +14,6 @@ export function validateForm(active: number, values: FormValues) {
         values.dob?.toString(),
         "Bitte Nachnamen angeben"
       ),
-    };
-  }
-
-  if (active === 1) {
-    return {
       street: notEmptyValidation(
         values.street,
         "Bitte Straße & Nummer angeben"

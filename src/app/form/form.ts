@@ -1,5 +1,6 @@
 export const getInitialValues = () => {
   return {
+    applicantType: "self",
     gender: "Männlich",
     title: "",
     firstName: "",
@@ -12,6 +13,16 @@ export const getInitialValues = () => {
     email: "",
     phone: "",
     mobile: "",
+    parentGender: "Männlich",
+    parentTitle: "",
+    parentFirstName: "",
+    parentLastName: "",
+    parentDob: undefined,
+    parentStreet: "",
+    parentPostalCode: null,
+    parentCity: "",
+    parentCountry: "Deutschland",
+    parentEmail: "",
     entryDate: new Date(),
     membershipType: "",
     certificate: null,
@@ -33,6 +44,7 @@ export const getInitialValues = () => {
 };
 
 export interface FormValues {
+  applicantType: string;
   gender: string;
   title?: string;
   firstName: string;
@@ -45,6 +57,15 @@ export interface FormValues {
   email: string;
   phone?: string;
   mobile?: string;
+  parentGender: string;
+  parentTitle?: string;
+  parentFirstName: string;
+  parentLastName: string;
+  parentDob?: Date;
+  parentStreet: string;
+  parentPostalCode: number | null;
+  parentCity: string;
+  parentCountry: string;
   entryDate: Date;
   membershipType: string;
   certificate?: File | null;
