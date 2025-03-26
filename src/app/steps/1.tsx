@@ -4,7 +4,6 @@ import { UseFormReturnType } from "@mantine/form";
 import { useMediaQuery } from "@mantine/hooks";
 import { IconMoodKid, IconUserCircle } from "@tabler/icons-react";
 import { FormWrapper } from "../components/form";
-import Label from "../components/label";
 import Title from "../components/title";
 import { FormValues } from "../form/form";
 
@@ -43,10 +42,10 @@ export default function Step1({
         Das ist ambitioniert, doch gemeinsam können wir es schaffen.
       </p>
       <p>
-        <b>Werde Mitglied - werde #TEILDERLEGENDE</b>
+        <i>Werde Mitglied - werde #TEILDERLEGENDE</i>
       </p>
       <div className="pt-16">
-        <Label text="Dieser Mitgliedsantrag ist ..." />
+        <h3 className="pt-4">Dieser Mitgliedsantrag ist ...</h3>
         <SegmentedControl
           key={form.key("applicantType")}
           {...form.getInputProps("applicantType")}
