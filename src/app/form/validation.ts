@@ -12,7 +12,7 @@ export function validateForm(active: number, values: FormValues) {
       lastName: notEmptyValidation(values.lastName, "Bitte Nachnamen angeben"),
       dob: notEmptyValidation(
         values.dob?.toString(),
-        "Bitte Nachnamen angeben"
+        "Bitte Geburtstag angeben"
       ),
       street: notEmptyValidation(
         values.street,
@@ -39,7 +39,7 @@ export function validateForm(active: number, values: FormValues) {
       ),
       parentDob: notEmptyValidation(
         values.parentDob?.toString(),
-        "Bitte Nachnamen angeben"
+        "Bitte Geburtstag angeben"
       ),
       parentStreet: notEmptyValidation(
         values.parentStreet,
