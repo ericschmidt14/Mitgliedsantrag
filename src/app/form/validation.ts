@@ -30,6 +30,13 @@ export function validateForm(active: number, values: FormValues) {
   if (active === 2) {
     return {
       email: emailValidation(values.email),
+      parentMemberNumber: values.parentIsMember
+        ? values.parentMemberNumber === undefined ||
+          values.parentMemberNumber === null ||
+          values.parentMemberNumber < 1
+          ? "Bitte Mitgliedsnummer angeben"
+          : null
+        : null,
     };
   }
 
