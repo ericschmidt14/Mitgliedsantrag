@@ -14,7 +14,7 @@ export const getInitialValues = () => {
     phone: "",
     mobile: "",
     parentIsMember: false,
-    parentNumber: null,
+    parentMemberNumber: null,
     parentTitle: "",
     parentGender: "Männlich",
     parentFirstName: "",
@@ -60,7 +60,7 @@ export interface FormValues {
   phone?: string;
   mobile?: string;
   parentIsMember: boolean;
-  parentNumber: number | null;
+  parentMemberNumber: number | null;
   parentGender: string;
   parentTitle?: string;
   parentFirstName: string;

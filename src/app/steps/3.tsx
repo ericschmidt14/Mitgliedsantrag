@@ -132,8 +132,8 @@ export default function Step3({
             {form.values.parentIsMember && (
               <NumberInput
                 label="Mitgliedsnummer"
-                key={form.key("parentNumber")}
-                {...form.getInputProps("parentNumber")}
+                key={form.key("parentMemberNumber")}
+                {...form.getInputProps("parentMemberNumber")}
                 hideControls
                 withAsterisk
               />

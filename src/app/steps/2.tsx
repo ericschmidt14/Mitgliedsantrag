@@ -83,7 +83,7 @@ export default function Step2({
           />
         </FormRow>
         <DatePickerInput
-          defaultDate={new Date("1980-01-01")}
+          defaultDate={new Date()}
           defaultLevel="decade"
           valueFormat="DD.MM.YYYY"
           label="Geburtstag"
