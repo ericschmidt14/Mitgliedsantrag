@@ -23,6 +23,7 @@ export const getInitialValues = () => {
     parentCity: "",
     parentCountry: "Deutschland",
     parentEmail: "",
+    parentNumber: null,
     entryDate: new Date(),
     membershipType: "",
     certificate: null,
@@ -66,6 +67,7 @@ export interface FormValues {
   parentPostalCode: number | null;
   parentCity: string;
   parentCountry: string;
+  parentNumber: number | null;
   entryDate: Date;
   membershipType: string;
   certificate?: File | null;

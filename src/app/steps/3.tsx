@@ -111,18 +111,26 @@ export default function Step3({
                 withAsterisk
               />
             </FormRow>
-            <DatePickerInput
-              defaultDate={new Date("1980-01-01")}
-              defaultLevel="decade"
-              valueFormat="DD.MM.YYYY"
-              label="Geburtstag"
-              placeholder="TT.MM.JJJJ"
-              excludeDate={(d) => d > new Date()}
-              key={form.key("parentDob")}
-              {...form.getInputProps("parentDob")}
-              leftSection={<IconCalendar size={16} />}
-              withAsterisk
-            />
+            <FormRow>
+              <DatePickerInput
+                defaultDate={new Date("1980-01-01")}
+                defaultLevel="decade"
+                valueFormat="DD.MM.YYYY"
+                label="Geburtstag"
+                placeholder="TT.MM.JJJJ"
+                excludeDate={(d) => d > new Date()}
+                key={form.key("parentDob")}
+                {...form.getInputProps("parentDob")}
+                leftSection={<IconCalendar size={16} />}
+                withAsterisk
+              />
+              <NumberInput
+                label="Mitgliedsnummer"
+                key={form.key("parentNumber")}
+                {...form.getInputProps("parentNumber")}
+                hideControls
+              />
+            </FormRow>
             <h3 className="pt-4">Adresse</h3>
             <TextInput
               className="col-span-3"
