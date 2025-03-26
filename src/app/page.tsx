@@ -113,11 +113,11 @@ export default function Home() {
           <Stepper.Completed>
             <FormWrapper>
               <Title text="Antrag erfolgreich abgeschickt!" />
-              <p>Liebes Neu-Mitglied,</p>
+              <p>Liebes Neumitglied,</p>
               <p>
                 vielen Dank für Deine Anmeldung beim 1. FC Nürnberg. <br />
                 Du solltest eine E-Mail erhalten haben die Du bestätigen musst.
-                Bitte überprüfe auch Deinen SPAM Ordner.
+                Bitte überprüfe auch Deinen Spam Ordner.
               </p>
 
               <p>

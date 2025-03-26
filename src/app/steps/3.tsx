@@ -28,6 +28,10 @@ export default function Step3({
     focused.current?.focus();
   }, []);
 
+  const today = new Date();
+  const eighteenYearsAgo = new Date();
+  eighteenYearsAgo.setFullYear(today.getFullYear() - 18);
+
   return (
     <DatesProvider settings={{ locale: "de" }}>
       <FormWrapper>
@@ -113,12 +117,13 @@ export default function Step3({
               />
             </FormRow>
             <DatePickerInput
-              defaultDate={new Date("1980-01-01")}
+              defaultDate={eighteenYearsAgo}
               defaultLevel="decade"
               valueFormat="DD.MM.YYYY"
               label="Geburtstag"
               placeholder="TT.MM.JJJJ"
-              excludeDate={(d) => d > new Date()}
+              minDate={undefined}
+              maxDate={eighteenYearsAgo}
               key={form.key("parentDob")}
               {...form.getInputProps("parentDob")}
               leftSection={<IconCalendar size={16} />}
