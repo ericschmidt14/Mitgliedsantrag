@@ -1,6 +1,7 @@
 "use client";
 import {
   Autocomplete,
+  Checkbox,
   NumberInput,
   SegmentedControl,
   TextInput,
@@ -111,26 +112,32 @@ export default function Step3({
                 withAsterisk
               />
             </FormRow>
-            <FormRow>
-              <DatePickerInput
-                defaultDate={new Date("1980-01-01")}
-                defaultLevel="decade"
-                valueFormat="DD.MM.YYYY"
-                label="Geburtstag"
-                placeholder="TT.MM.JJJJ"
-                excludeDate={(d) => d > new Date()}
-                key={form.key("parentDob")}
-                {...form.getInputProps("parentDob")}
-                leftSection={<IconCalendar size={16} />}
-                withAsterisk
-              />
+            <DatePickerInput
+              defaultDate={new Date("1980-01-01")}
+              defaultLevel="decade"
+              valueFormat="DD.MM.YYYY"
+              label="Geburtstag"
+              placeholder="TT.MM.JJJJ"
+              excludeDate={(d) => d > new Date()}
+              key={form.key("parentDob")}
+              {...form.getInputProps("parentDob")}
+              leftSection={<IconCalendar size={16} />}
+              withAsterisk
+            />
+            <Checkbox
+              label="Ich bin bereits Mitglied beim 1. FC Nürnberg."
+              key={form.key("parentIsMember")}
+              {...form.getInputProps("parentIsMember", { type: "checkbox" })}
+            />
+            {form.values.parentIsMember && (
               <NumberInput
                 label="Mitgliedsnummer"
                 key={form.key("parentNumber")}
                 {...form.getInputProps("parentNumber")}
                 hideControls
+                withAsterisk
               />
-            </FormRow>
+            )}
             <h3 className="pt-4">Adresse</h3>
             <TextInput
               className="col-span-3"

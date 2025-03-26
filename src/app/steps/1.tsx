@@ -2,7 +2,7 @@
 import { SegmentedControl } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { useMediaQuery } from "@mantine/hooks";
-import { IconGift, IconMoodKid, IconUserCircle } from "@tabler/icons-react";
+import { IconMoodKid, IconUserCircle } from "@tabler/icons-react";
 import { FormWrapper } from "../components/form";
 import Label from "../components/label";
 import Title from "../components/title";
@@ -25,11 +25,11 @@ export default function Step1({
       icon: <IconMoodKid size={48} stroke={1} />,
       value: "parent",
     },
-    {
-      label: "ein Geschenk.",
-      icon: <IconGift size={48} stroke={1} />,
-      value: "gift",
-    },
+    // {
+    //   label: "ein Geschenk.",
+    //   icon: <IconGift size={48} stroke={1} />,
+    //   value: "gift",
+    // },
   ];
 
   return (

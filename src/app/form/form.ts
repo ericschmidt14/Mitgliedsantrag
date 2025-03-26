@@ -13,8 +13,10 @@ export const getInitialValues = () => {
     email: "",
     phone: "",
     mobile: "",
-    parentGender: "Männlich",
+    parentIsMember: false,
+    parentNumber: null,
     parentTitle: "",
+    parentGender: "Männlich",
     parentFirstName: "",
     parentLastName: "",
     parentDob: undefined,
@@ -23,7 +25,6 @@ export const getInitialValues = () => {
     parentCity: "",
     parentCountry: "Deutschland",
     parentEmail: "",
-    parentNumber: null,
     entryDate: new Date(),
     membershipType: "",
     certificate: null,
@@ -58,6 +59,8 @@ export interface FormValues {
   email: string;
   phone?: string;
   mobile?: string;
+  parentIsMember: boolean;
+  parentNumber: number | null;
   parentGender: string;
   parentTitle?: string;
   parentFirstName: string;
@@ -67,7 +70,6 @@ export interface FormValues {
   parentPostalCode: number | null;
   parentCity: string;
   parentCountry: string;
-  parentNumber: number | null;
   entryDate: Date;
   membershipType: string;
   certificate?: File | null;
