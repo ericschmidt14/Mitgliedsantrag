@@ -68,7 +68,7 @@ export function validateForm(active: number, values: FormValues) {
 
     return {
       email: emailValidation(values.email),
-      parentChecks,
+      ...parentChecks,
     };
   }
 
