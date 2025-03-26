@@ -28,8 +28,35 @@ export function validateForm(active: number, values: FormValues) {
   }
 
   if (active === 2) {
-    return {
-      email: emailValidation(values.email),
+    const parentChecks = values.applicantType !== "self" && {
+      parentFirstName: notEmptyValidation(
+        values.parentFirstName,
+        "Bitte Vornamen angeben"
+      ),
+      parentLastName: notEmptyValidation(
+        values.parentLastName,
+        "Bitte Nachnamen angeben"
+      ),
+      parentDob: notEmptyValidation(
+        values.parentDob?.toString(),
+        "Bitte Nachnamen angeben"
+      ),
+      parentStreet: notEmptyValidation(
+        values.parentStreet,
+        "Bitte Straße & Nummer angeben"
+      ),
+      parentPostalCode:
+        values.parentPostalCode == undefined || values.parentPostalCode < 1
+          ? "Bitte Postleitzahl angeben"
+          : null,
+      parentCity: notEmptyValidation(
+        values.parentCity,
+        "Bitte Wohnort angeben"
+      ),
+      parentCountry: notEmptyValidation(
+        values.parentCountry,
+        "Bitte Land angeben"
+      ),
       parentMemberNumber: values.parentIsMember
         ? values.parentMemberNumber === undefined ||
           values.parentMemberNumber === null ||
@@ -37,6 +64,11 @@ export function validateForm(active: number, values: FormValues) {
           ? "Bitte Mitgliedsnummer angeben"
           : null
         : null,
+    };
+
+    return {
+      email: emailValidation(values.email),
+      parentChecks,
     };
   }
 
