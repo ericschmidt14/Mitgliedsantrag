@@ -119,6 +119,7 @@ export default function Step2({
             {...form.getInputProps("postalCode")}
             withAsterisk
             hideControls
+            allowLeadingZeros
           />
           <TextInput
             className="col-span-3"
