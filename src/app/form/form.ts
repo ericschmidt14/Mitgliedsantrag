@@ -20,6 +20,7 @@ export const getInitialValues = () => {
     parentFirstName: "",
     parentLastName: "",
     parentDob: undefined,
+    parentAddressIsIdentical: true,
     parentStreet: "",
     parentPostalCode: "",
     parentCity: "",
@@ -66,6 +67,7 @@ export interface FormValues {
   parentFirstName: string;
   parentLastName: string;
   parentDob?: Date;
+  parentAddressIsIdentical: boolean;
   parentStreet: string;
   parentPostalCode: string;
   parentCity: string;

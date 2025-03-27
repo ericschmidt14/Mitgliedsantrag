@@ -30,19 +30,7 @@ export function validateForm(active: number, values: FormValues) {
   }
 
   if (active === 2) {
-    const parentChecks = values.applicantType !== "self" && {
-      parentFirstName: notEmptyValidation(
-        values.parentFirstName,
-        "Bitte Vornamen angeben"
-      ),
-      parentLastName: notEmptyValidation(
-        values.parentLastName,
-        "Bitte Nachnamen angeben"
-      ),
-      parentDob: notEmptyValidation(
-        values.parentDob?.toString(),
-        "Bitte Geburtstag angeben"
-      ),
+    const parentAddressChecks = !values.parentAddressIsIdentical && {
       parentStreet: notEmptyValidation(
         values.parentStreet,
         "Bitte Straße & Nummer angeben"
@@ -63,6 +51,22 @@ export function validateForm(active: number, values: FormValues) {
       parentCountry: notEmptyValidation(
         values.parentCountry,
         "Bitte Land angeben"
+      ),
+    };
+
+    const parentChecks = values.applicantType !== "self" && {
+      ...parentAddressChecks,
+      parentFirstName: notEmptyValidation(
+        values.parentFirstName,
+        "Bitte Vornamen angeben"
+      ),
+      parentLastName: notEmptyValidation(
+        values.parentLastName,
+        "Bitte Nachnamen angeben"
+      ),
+      parentDob: notEmptyValidation(
+        values.parentDob?.toString(),
+        "Bitte Geburtstag angeben"
       ),
       parentMemberNumber: values.parentIsMember
         ? values.parentMemberNumber === undefined ||

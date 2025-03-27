@@ -58,6 +58,16 @@ export default function Home() {
               values.certificate && (await fileToBase64(values.certificate)),
           };
 
+          if (
+            values.applicantType === "parent" &&
+            values.parentAddressIsIdentical
+          ) {
+            data.parentStreet = values.street;
+            data.parentPostalCode = values.postalCode;
+            data.parentCity = values.city;
+            data.parentCountry = values.country;
+          }
+
           if (values.certificate) {
             data.certificateName = values.certificate.name;
           }

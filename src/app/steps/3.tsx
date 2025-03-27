@@ -139,46 +139,58 @@ export default function Step3({
               />
             )}
             <h3 className="pt-4">Adresse</h3>
-            <TextInput
-              className="col-span-3"
-              label="Straße & Hausnummer"
-              name="street"
-              autoComplete="street"
-              key={form.key("parentStreet")}
-              {...form.getInputProps("parentStreet")}
-              withAsterisk
+            <Checkbox
+              label="Meine Anschrift ist identisch mit der Adresse des Neumitglieds."
+              description={`${form.values.street}, ${form.values.postalCode} ${form.values.city}, ${form.values.country}`}
+              key={form.key("parentAddressIsIdentical")}
+              {...form.getInputProps("parentAddressIsIdentical", {
+                type: "checkbox",
+              })}
             />
-            <FormRow asymmetric>
-              <NumberInput
-                label="PLZ"
-                name="postal"
-                autoComplete="postal"
-                key={form.key("parentPostalCode")}
-                {...form.getInputProps("parentPostalCode")}
-                withAsterisk
-                hideControls
-                allowLeadingZeros
-              />
-              <TextInput
-                className="col-span-3"
-                label="Ort"
-                name="city"
-                autoComplete="city"
-                key={form.key("parentCity")}
-                {...form.getInputProps("parentCity")}
-                withAsterisk
-              />
-            </FormRow>
-            <Select
-              label="Land"
-              data={countries}
-              key={form.key("parentCountry")}
-              {...form.getInputProps("parentCountry")}
-              withAsterisk
-              checkIconPosition="right"
-              allowDeselect={false}
-              searchable
-            />
+            {!form.values.parentAddressIsIdentical && (
+              <>
+                <TextInput
+                  className="col-span-3"
+                  label="Straße & Hausnummer"
+                  name="street"
+                  autoComplete="street"
+                  key={form.key("parentStreet")}
+                  {...form.getInputProps("parentStreet")}
+                  withAsterisk
+                />
+                <FormRow asymmetric>
+                  <NumberInput
+                    label="PLZ"
+                    name="postal"
+                    autoComplete="postal"
+                    key={form.key("parentPostalCode")}
+                    {...form.getInputProps("parentPostalCode")}
+                    withAsterisk
+                    hideControls
+                    allowLeadingZeros
+                  />
+                  <TextInput
+                    className="col-span-3"
+                    label="Ort"
+                    name="city"
+                    autoComplete="city"
+                    key={form.key("parentCity")}
+                    {...form.getInputProps("parentCity")}
+                    withAsterisk
+                  />
+                </FormRow>
+                <Select
+                  label="Land"
+                  data={countries}
+                  key={form.key("parentCountry")}
+                  {...form.getInputProps("parentCountry")}
+                  withAsterisk
+                  checkIconPosition="right"
+                  allowDeselect={false}
+                  searchable
+                />
+              </>
+            )}
           </>
         )}
       </FormWrapper>
