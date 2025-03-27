@@ -14,6 +14,7 @@ import { useEffect, useRef } from "react";
 import { FormRow, FormWrapper } from "../components/form";
 import Label from "../components/label";
 import Title from "../components/title";
+import countries from "../data/countries.json";
 import { FormValues } from "../form/form";
 
 export default function Step2({
@@ -135,8 +136,9 @@ export default function Step2({
             withAsterisk
           />
         </FormRow>
-        <TextInput
+        <Autocomplete
           label="Land"
+          data={countries}
           key={form.key("country")}
           {...form.getInputProps("country")}
           withAsterisk
