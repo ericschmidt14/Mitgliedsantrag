@@ -1,7 +1,7 @@
 const fs = require("fs");
 const https = require("https");
 
-const url = "https://restcountries.com/v3.1/all?fields=name,translations";
+const url = "https://restcountries.com/v3.1/all?fields=name,translations,cca2";
 
 https
   .get(url, (res) => {
@@ -15,17 +15,29 @@ https
       try {
         const countries = JSON.parse(data);
 
-        const germanCountries = countries
-          .map((country) => country.translations?.deu?.common)
+        const countryList = countries
+          .map((country) => {
+            const nameInGerman = country.translations?.deu?.common;
+            const isoCode = country.cca2;
+
+            if (nameInGerman && isoCode) {
+              return {
+                value: isoCode,
+                label: nameInGerman,
+              };
+            }
+
+            return null;
+          })
           .filter(Boolean)
-          .sort();
+          .sort((a, b) => a.label.localeCompare(b.label));
 
         fs.writeFileSync(
-          "src/app/data/countries.json",
-          JSON.stringify(germanCountries, null, 2)
+          "./countries.json",
+          JSON.stringify(countryList, null, 2)
         );
 
-        console.log("✅ German country names saved to countries.json");
+        console.log("✅ Country names and codes saved to countries.json");
       } catch (error) {
         console.error("❌ Error parsing JSON:", error);
       }

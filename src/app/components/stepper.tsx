@@ -22,7 +22,7 @@ export default function StepperIndicator({
       <Box
         style={{
           height: "100%",
-          width: `${((active + 1) / steps) * 100}%`,
+          width: `${(active / steps) * 100}%`,
           backgroundColor: "var(--mantine-primary-color-filled)",
           transition: "width 0.3s ease",
         }}

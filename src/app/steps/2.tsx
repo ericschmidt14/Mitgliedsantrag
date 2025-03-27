@@ -3,6 +3,7 @@ import {
   Autocomplete,
   NumberInput,
   SegmentedControl,
+  Select,
   TextInput,
 } from "@mantine/core";
 import { DatePickerInput, DatesProvider } from "@mantine/dates";
@@ -129,12 +130,15 @@ export default function Step2({
             withAsterisk
           />
         </FormRow>
-        <Autocomplete
+        <Select
           label="Land"
           data={countries}
           key={form.key("country")}
           {...form.getInputProps("country")}
           withAsterisk
+          checkIconPosition="right"
+          allowDeselect={false}
+          searchable
         />
       </FormWrapper>
     </DatesProvider>
