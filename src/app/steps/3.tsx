@@ -2,6 +2,7 @@
 import {
   Autocomplete,
   Checkbox,
+  Fieldset,
   NumberInput,
   SegmentedControl,
   Select,
@@ -148,7 +149,7 @@ export default function Step3({
               })}
             />
             {!form.values.parentAddressIsIdentical && (
-              <>
+              <Fieldset legend="Abweichende Adresse">
                 <TextInput
                   className="col-span-3"
                   label="Straße & Hausnummer"
@@ -189,7 +190,7 @@ export default function Step3({
                   allowDeselect={false}
                   searchable
                 />
-              </>
+              </Fieldset>
             )}
           </>
         )}

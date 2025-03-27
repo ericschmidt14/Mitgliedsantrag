@@ -152,7 +152,7 @@ const postalCodeValidation = (country: string, postalCode: string) => {
   if (postalCodeRules[country]) {
     return postalCodeRules[country].test(postalCode)
       ? null
-      : "Bitte gültige Postleitzahl angeben";
+      : "Bitte gültige PLZ angeben";
   }
 
   return notEmptyValidation(postalCode, "Bitte Postleitzahl angeben");
