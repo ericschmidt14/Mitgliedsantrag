@@ -7,7 +7,7 @@ export const titles = [
   "Prof. Dr.",
 ];
 
-export const genders = [];
+export const genders = ["Männlich", "Weiblich", "Divers"];
 
 export const countries = [
   "Afghanistan",
