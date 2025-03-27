@@ -1,7 +1,6 @@
 "use client";
 import {
   Autocomplete,
-  NumberInput,
   SegmentedControl,
   Select,
   TextInput,
@@ -111,15 +110,13 @@ export default function Step2({
           withAsterisk
         />
         <FormRow asymmetric>
-          <NumberInput
+          <TextInput
             label="PLZ"
             name="postal"
             autoComplete="postal"
             key={form.key("postalCode")}
             {...form.getInputProps("postalCode")}
             withAsterisk
-            hideControls
-            allowLeadingZeros
           />
           <TextInput
             className="col-span-3"

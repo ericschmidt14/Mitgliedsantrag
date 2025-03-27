@@ -7,7 +7,7 @@ export const getInitialValues = () => {
     lastName: "",
     dob: undefined,
     street: "",
-    postalCode: null,
+    postalCode: "",
     city: "",
     country: "DE",
     email: "",
@@ -21,7 +21,7 @@ export const getInitialValues = () => {
     parentLastName: "",
     parentDob: undefined,
     parentStreet: "",
-    parentPostalCode: null,
+    parentPostalCode: "",
     parentCity: "",
     parentCountry: "DE",
     parentEmail: "",
@@ -53,7 +53,7 @@ export interface FormValues {
   lastName: string;
   dob?: Date;
   street: string;
-  postalCode: number | null;
+  postalCode: string;
   city: string;
   country: string;
   email: string;
@@ -67,7 +67,7 @@ export interface FormValues {
   parentLastName: string;
   parentDob?: Date;
   parentStreet: string;
-  parentPostalCode: number | null;
+  parentPostalCode: string;
   parentCity: string;
   parentCountry: string;
   entryDate: Date;

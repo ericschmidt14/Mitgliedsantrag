@@ -19,9 +19,11 @@ export function validateForm(active: number, values: FormValues) {
         "Bitte Straße & Nummer angeben"
       ),
       postalCode:
-        values.postalCode == undefined || values.postalCode < 1
-          ? "Bitte Postleitzahl angeben"
-          : null,
+        values.country === "DE"
+          ? /^\d{5}$/.test(values.postalCode)
+            ? null
+            : "Bitte gültige Postleitzahl angeben"
+          : notEmptyValidation(values.postalCode, "Bitte Postleitzahl angeben"),
       city: notEmptyValidation(values.city, "Bitte Wohnort angeben"),
       country: notEmptyValidation(values.country, "Bitte Land angeben"),
     };
@@ -46,9 +48,14 @@ export function validateForm(active: number, values: FormValues) {
         "Bitte Straße & Nummer angeben"
       ),
       parentPostalCode:
-        values.parentPostalCode == undefined || values.parentPostalCode < 1
-          ? "Bitte Postleitzahl angeben"
-          : null,
+        values.country === "DE"
+          ? /^\d{5}$/.test(values.parentPostalCode)
+            ? null
+            : "Bitte gültige Postleitzahl angeben"
+          : notEmptyValidation(
+              values.parentPostalCode,
+              "Bitte Postleitzahl angeben"
+            ),
       parentCity: notEmptyValidation(
         values.parentCity,
         "Bitte Wohnort angeben"
