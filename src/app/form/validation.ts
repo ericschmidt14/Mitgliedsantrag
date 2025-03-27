@@ -1,4 +1,4 @@
-import { isValidIBAN } from "../utils";
+import { isValidIBAN } from "../lib/utils";
 import { FormValues } from "./form";
 
 export function validateForm(active: number, values: FormValues) {

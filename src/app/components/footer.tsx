@@ -1,4 +1,4 @@
-import { IMPRINT, PRIVACY_NOTICE } from "../constants";
+import { IMPRINT, PRIVACY_NOTICE } from "../lib/constants";
 
 export default function Footer() {
   return (

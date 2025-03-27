@@ -3,8 +3,8 @@ import { Checkbox, Divider, Select, TextInput } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { FormWrapper } from "../components/form";
 import Title from "../components/title";
-import { PRIVACY_NOTICE } from "../constants";
 import { FormValues } from "../form/form";
+import { PRIVACY_NOTICE } from "../lib/constants";
 
 export default function Step6({
   form,

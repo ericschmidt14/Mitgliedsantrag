@@ -1,4 +1,15 @@
-[
+export const titles = [
+  "Dr.",
+  "Dr. med.",
+  "Dr.-Ing.",
+  "Dipl.-Ing.",
+  "Prof.",
+  "Prof. Dr.",
+];
+
+export const genders = [];
+
+export const countries = [
   "Afghanistan",
   "Albanien",
   "Algerien",
@@ -248,5 +259,5 @@
   "Äquatorialguinea",
   "Äthiopien",
   "Åland",
-  "Österreich"
-]
+  "Österreich",
+];

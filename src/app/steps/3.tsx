@@ -15,8 +15,8 @@ import { useEffect, useRef } from "react";
 import { FormRow, FormWrapper } from "../components/form";
 import Label from "../components/label";
 import Title from "../components/title";
-import countries from "../data/countries.json";
 import { FormValues } from "../form/form";
+import { countries, genders, titles } from "../lib/data";
 
 export default function Step3({
   form,
@@ -77,14 +77,7 @@ export default function Step3({
               <Autocomplete
                 key={form.key("parentTitle")}
                 {...form.getInputProps("parentTitle")}
-                data={[
-                  "Dr.",
-                  "Dr. med.",
-                  "Dr.-Ing.",
-                  "Dipl.-Ing.",
-                  "Prof.",
-                  "Prof. Dr.",
-                ]}
+                data={titles}
                 label="Titel"
               />
               <div>
@@ -93,7 +86,7 @@ export default function Step3({
                   key={form.key("parentGender")}
                   {...form.getInputProps("parentGender")}
                   fullWidth
-                  data={["Männlich", "Weiblich", "Divers"]}
+                  data={genders}
                   transitionDuration={500}
                   transitionTimingFunction="linear"
                 />
