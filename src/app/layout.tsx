@@ -3,8 +3,6 @@ import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Footer from "./components/footer";
-import Header from "./components/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -46,11 +44,7 @@ export default function RootLayout({
         <MantineProvider theme={theme} defaultColorScheme="dark">
           <Suspense>
             <main className="min-h-screen flex flex-col justify-between bg-[length:300%_300%] bg-gradient-to-r from-[#b3193e] via-[#aa1124] via-30% to-[#220407] bg-right">
-              <div className="flex flex-col justify-between">
-                <Header />
-                {children}
-              </div>
-              <Footer />
+              {children}
             </main>
           </Suspense>
         </MantineProvider>
