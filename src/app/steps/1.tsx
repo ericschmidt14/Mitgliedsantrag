@@ -31,6 +31,10 @@ export default function Step1({
     // },
   ];
 
+  form.watch("applicantType", () => {
+    form.setFieldValue("dob", undefined);
+  });
+
   return (
     <FormWrapper>
       <Title text="Die Legende lebt durch dich" />

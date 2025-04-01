@@ -106,7 +106,7 @@ export default function Page() {
           <p className="muted text-center p-4">Keine Anträge vorhanden.</p>
         ) : (
           <>
-            <Table>
+            <Table highlightOnHover highlightOnHoverColor="rgba(0,0,0,0.2)">
               <Table.Thead>
                 <Table.Tr>
                   <Table.Th>Name</Table.Th>

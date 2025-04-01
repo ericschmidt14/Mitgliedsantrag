@@ -7,7 +7,7 @@ import { Result } from "../lib/interfaces";
 export default function Row({ result }: { result: Result }) {
   const [opened, { open, close }] = useDisclosure(false);
 
-  const dateFormat = "DD.MM.YYYY HH:MM:ss";
+  const dateFormat = "DD.MM.YYYY HH:MM";
 
   return (
     <>

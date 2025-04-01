@@ -1,5 +1,6 @@
 "use client";
 import {
+  Alert,
   Autocomplete,
   SegmentedControl,
   Select,
@@ -7,7 +8,7 @@ import {
 } from "@mantine/core";
 import { DatePickerInput, DatesProvider } from "@mantine/dates";
 import { UseFormReturnType } from "@mantine/form";
-import { IconCalendar } from "@tabler/icons-react";
+import { IconCalendar, IconInfoCircle } from "@tabler/icons-react";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { useEffect, useRef } from "react";
@@ -99,6 +100,15 @@ export default function Step2({
           leftSection={<IconCalendar size={16} />}
           withAsterisk
         />
+        {form.values.applicantType === "self" && (
+          <Alert variant="light" title="Hinweis" icon={<IconInfoCircle />}>
+            Bitte beachte, dass Du volljährig sein musst, um Dich selbst als
+            Mitglied anzumelden. Falls Du noch minderjährig bist, muss die
+            Anmeldung von einer erziehungsberechtigten Person vorgenommen
+            werden. Wähle dazu bitte im vorherigen Schritt die entsprechende
+            Option aus.
+          </Alert>
+        )}
         <h3 className="pt-4">Adresse</h3>
         <TextInput
           className="col-span-3"
