@@ -42,7 +42,7 @@ export default function Step1({
         Du bist willensstark und leidensfähig? Oder eher locker und unaufgeregt?
         Welcher Typ Du auch bist, egal, wo Du herkommst und wie Du aussiehst,
         wie alt oder wie reich Du bist - wir haben Großes mit Dir vor: In den
-        nächsten Jahren wollen wir unsere Mitgliederzahl auf 50.000 verdoppeln.
+        nächsten Jahren wollen wir unsere Mitgliederzahl auf 50.000 steigern.
         Das ist ambitioniert, doch gemeinsam können wir es schaffen.
       </p>
       <p>
