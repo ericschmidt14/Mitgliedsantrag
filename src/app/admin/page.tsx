@@ -112,7 +112,7 @@ export default function Page() {
                   <Table.Th>Name</Table.Th>
                   <Table.Th>E-Mail</Table.Th>
                   <Table.Th>Eingang</Table.Th>
-                  <Table.Th>Versand</Table.Th>
+                  <Table.Th>Mailversand</Table.Th>
                   <Table.Th>Bestätigung</Table.Th>
                   <Table.Th />
                 </Table.Tr>

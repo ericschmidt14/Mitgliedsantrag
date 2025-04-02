@@ -7,7 +7,7 @@ import { Result } from "../lib/interfaces";
 export default function Row({ result }: { result: Result }) {
   const [opened, { open, close }] = useDisclosure(false);
 
-  const dateFormat = "DD.MM.YYYY HH:MM";
+  const dateFormat = "DD.MM.YYYY hh:mm:ss";
 
   return (
     <>
@@ -16,7 +16,9 @@ export default function Row({ result }: { result: Result }) {
           {result.firstname} {result.lastname}
         </Table.Td>
         <Table.Td>{result.mail || result.json.email}</Table.Td>
-        <Table.Td>{dayjs(result.created).format(dateFormat)}</Table.Td>
+        <Table.Td>
+          {result.created && dayjs(result.created).format(dateFormat)}
+        </Table.Td>
         <Table.Td>
           {result.mailing && dayjs(result.mailing).format(dateFormat)}
         </Table.Td>
