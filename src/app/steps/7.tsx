@@ -85,6 +85,10 @@ export default function Step7({
       value: form.values.id,
     },
     {
+      label: "Newsletter",
+      value: form.values.newsletter ? "Ja" : "Nein",
+    },
+    {
       label: "Antragsdatum",
       value: dayjs(new Date()).format("DD.MM.YYYY"),
     },

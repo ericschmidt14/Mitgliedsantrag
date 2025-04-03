@@ -1,5 +1,6 @@
 export const getInitialValues = () => {
   return {
+    isManual: false,
     applicantType: "self",
     gender: "Männlich",
     title: "",
@@ -47,6 +48,7 @@ export const getInitialValues = () => {
 };
 
 export interface FormValues {
+  isManual: boolean;
   applicantType: string;
   gender: string;
   title?: string;

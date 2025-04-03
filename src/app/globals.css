@@ -101,6 +101,10 @@ article.small li {
   color: var(--mantine-color-dimmed);
 }
 
+.mantine-Fieldset-root {
+  background: transparent;
+}
+
 .responsive-table {
   width: 100%;
   border-collapse: collapse;

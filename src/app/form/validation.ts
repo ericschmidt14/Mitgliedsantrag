@@ -69,6 +69,8 @@ export function validateForm(active: number, values: FormValues) {
 
     return {
       email: emailValidation(values.email),
+      phone: values.phone?.trim() !== "" && numberValidation(values.phone),
+      mobile: values.mobile?.trim() !== "" && numberValidation(values.mobile),
       ...parentChecks,
     };
   }
@@ -94,7 +96,7 @@ export function validateForm(active: number, values: FormValues) {
         "Bitte Kontoinhaber angeben"
       ),
       iban: ibanValidation(values.iban),
-      bic: notEmptyValidation(values.bic, "Bitte BIC angeben"),
+      bic: bicValidation(values.bic),
     };
   }
 
@@ -121,6 +123,12 @@ const emailValidation = (email: string) => {
 
 const ibanValidation = (iban: string) => {
   return isValidIBAN(iban) ? null : "Ungültige IBAN";
+};
+
+const bicValidation = (bic: string) => {
+  return /^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$/.test(bic)
+    ? null
+    : "Ungültige BIC";
 };
 
 const postalCodeValidation = (country: string, postalCode: string) => {
@@ -156,4 +164,10 @@ const postalCodeValidation = (country: string, postalCode: string) => {
   }
 
   return notEmptyValidation(postalCode, "Bitte Postleitzahl angeben");
+};
+
+const numberValidation = (value: string | undefined) => {
+  return /^[0-9 ]*$/.test(value || "")
+    ? null
+    : "Bitte nur Ziffern eingeben (z.B. 0049 statt +49)";
 };

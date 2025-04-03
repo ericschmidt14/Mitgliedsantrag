@@ -23,8 +23,8 @@ export default function Step6({
           "Im Max-Morlock-Stadion",
           "Fanclub",
           "Auswärtsfahrt",
-          "Freunde / Familie",
-          "Fan- / Ticketshop",
+          "Freunde/Familie",
+          "Fan-/Ticketshop",
           "Clubhaus",
           "fcn.de",
           "Social Media",
@@ -33,7 +33,7 @@ export default function Step6({
           "Radiowerbung",
           "Zeitungsartikel",
           "Auf anderen FCN-Veranstaltungen",
-          "Fußballcamps / Fußballschule",
+          "Fußballcamps/Fußballschule",
           "AIRTIME Trampolinpark",
           OTHER,
         ]}
@@ -78,7 +78,7 @@ export default function Step6({
       </p>
       <p className="small">
         Erläuterungen zu Informationen auf Basis persönlicher Interessen
-        erhalten Sie{" "}
+        erhältst Du{" "}
         <a href={PRIVACY_NOTICE} className="link small" target="_blank">
           hier
         </a>
@@ -90,10 +90,10 @@ export default function Step6({
         <a href="mailto:datenschutz@fcn.de" className="link small">
           datenschutz@fcn.de
         </a>{" "}
-        widerrufen kann. Wir setzen Sie davon in Kenntnis, dass durch den
+        widerrufen kann. Wir setzen Dich davon in Kenntnis, dass durch den
         Widerruf der Einwilligung die Rechtmäßigkeit der aufgrund der
         Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.
-        Weitere Informationen finden Sie in unserer{" "}
+        Weitere Informationen findest Du in unserer{" "}
         <a href={PRIVACY_NOTICE} className="link small" target="_blank">
           Datenschutzerklärung
         </a>

@@ -1,7 +1,9 @@
 "use client";
-import { Button, Stepper } from "@mantine/core";
+import { Alert, Button, Stepper } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { IconExclamationCircle } from "@tabler/icons-react";
 import dayjs from "dayjs";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import Footer from "./components/footer";
 import { FormWrapper } from "./components/form";
@@ -19,6 +21,9 @@ import Step6 from "./steps/6";
 import Step7 from "./steps/7";
 
 export default function Home() {
+  const searchParams = useSearchParams();
+  const isManual = searchParams.has("manuell");
+
   const [active, setActive] = useState(0);
 
   const STEPS = 7;
@@ -79,13 +84,31 @@ export default function Home() {
                 data.certificateName = values.certificate.name;
               }
 
+              if (isManual) {
+                data.isManual = true;
+              }
+
               fetch("/api/save", {
                 method: "POST",
                 body: JSON.stringify(data, null, 2),
               })
                 .then((res) => res.text())
-                .then(() => {
+                .then((token) => {
                   nextStep();
+                  if (isManual) {
+                    fetch(`/api/confirm/${JSON.parse(token)}`, {
+                      method: "GET",
+                      headers: { Accept: "*/*" },
+                    })
+                      .then((res) => res.json())
+                      .then((res) => {
+                        res !== 200 &&
+                          console.log(
+                            "Ein Fehler ist aufgetreten: Das Mitglied konnte nicht bestätigt werden."
+                          );
+                      })
+                      .catch((error) => console.error(error));
+                  }
                 })
                 .catch((error) => console.error(error));
             })}
@@ -107,6 +130,14 @@ export default function Home() {
               }}
             >
               <Stepper.Step>
+                {isManual && (
+                  <Alert
+                    variant="light"
+                    title="Achtung! Dies ist ein händischer Antrag ohne Mailversand."
+                    icon={<IconExclamationCircle />}
+                    className="mb-8"
+                  />
+                )}
                 <Step1 form={form} />
               </Stepper.Step>
               <Stepper.Step>
