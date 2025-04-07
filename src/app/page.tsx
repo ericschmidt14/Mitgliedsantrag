@@ -100,10 +100,10 @@ export default function Home() {
                       method: "GET",
                       headers: { Accept: "*/*" },
                     })
-                      .then((res) => res.json())
+                      .then((res) => res.status)
                       .then((res) => {
                         res !== 200 &&
-                          console.log(
+                          console.error(
                             "Ein Fehler ist aufgetreten: Das Mitglied konnte nicht bestätigt werden."
                           );
                       })

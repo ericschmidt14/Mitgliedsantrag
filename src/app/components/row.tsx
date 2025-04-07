@@ -1,6 +1,11 @@
-import { Button, CopyButton, Drawer, Table } from "@mantine/core";
+import { ActionIcon, Button, CopyButton, Drawer, Table } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { IconCheck, IconClipboard, IconId } from "@tabler/icons-react";
+import {
+  IconCheck,
+  IconClipboard,
+  IconDownload,
+  IconId,
+} from "@tabler/icons-react";
 import dayjs from "dayjs";
 import { Result } from "../lib/interfaces";
 
@@ -8,6 +13,22 @@ export default function Row({ result }: { result: Result }) {
   const [opened, { open, close }] = useDisclosure(false);
 
   const dateFormat = "DD.MM.YYYY hh:mm:ss";
+
+  const handleDownload = () => {
+    if (
+      result.json.certificate === undefined ||
+      result.json.certificate === null
+    ) {
+      return;
+    }
+
+    const link = document.createElement("a");
+    link.href = result.json.certificate as any;
+    link.download = result.json.certificateName!;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -25,15 +46,22 @@ export default function Row({ result }: { result: Result }) {
         <Table.Td>
           {result.confirmed && dayjs(result.confirmed).format(dateFormat)}
         </Table.Td>
-        <Table.Td align="right">
-          <Button
-            size="xs"
-            variant="light"
-            onClick={open}
-            leftSection={<IconId size={16} />}
-          >
-            Details
-          </Button>
+        <Table.Td>
+          <div className="flex justify-end items-center gap-2">
+            {result.json.certificate && (
+              <ActionIcon variant="transparent" onClick={handleDownload}>
+                <IconDownload size={16} />
+              </ActionIcon>
+            )}
+            <Button
+              size="xs"
+              variant="light"
+              onClick={open}
+              leftSection={<IconId size={16} />}
+            >
+              Details
+            </Button>
+          </div>
         </Table.Td>
       </Table.Tr>
 
@@ -41,6 +69,7 @@ export default function Row({ result }: { result: Result }) {
         <div className="flex flex-col gap-4 overflow-x-hidden">
           <header className="flex justify-between items-baseline gap-2">
             <h2>Details</h2>
+
             <CopyButton value={JSON.stringify(result.json, null, 2)}>
               {({ copied, copy }) => (
                 <Button
