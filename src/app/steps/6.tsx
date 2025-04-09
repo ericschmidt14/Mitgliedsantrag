@@ -100,6 +100,17 @@ export default function Step6({
         </a>
         .
       </p>
+      <Divider label="Datenschutz" />
+      <Checkbox
+        label="Ich bin ausdrücklich damit einverstanden, dass mein Vor- und Nachname im Mitgliedermagazin sowie auf der Stadionleinwand veröffentlicht werden darf, um mich als Neumitglied des Clubs bekannt zu machen."
+        key={form.key("acceptPrivacyNewMember")}
+        {...form.getInputProps("acceptPrivacyNewMember", { type: "checkbox" })}
+      />
+      <Checkbox
+        label="Ich bin ausdrücklich damit einverstanden, dass mein Geburtstag inkl. Vor- und Nachname für die öffentliche Gratulation im Mitgliedermagazin „Der Club“ genutzt werden dürfen."
+        key={form.key("acceptPrivacyBirthday")}
+        {...form.getInputProps("acceptPrivacyBirthday", { type: "checkbox" })}
+      />
       <Divider label="Satzung" />
       <Checkbox
         label={

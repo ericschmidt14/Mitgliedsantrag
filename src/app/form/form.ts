@@ -44,6 +44,8 @@ export const getInitialValues = () => {
     magazine: "Digital-Version",
     id: "Digital-Version",
     newsletter: false,
+    acceptPrivacyNewMember: false,
+    acceptPrivacyBirthday: false,
   };
 };
 
@@ -91,4 +93,6 @@ export interface FormValues {
   magazine: string;
   id: string;
   newsletter: boolean;
+  acceptPrivacyNewMember: boolean;
+  acceptPrivacyBirthday: boolean;
 }
