@@ -99,15 +99,18 @@ export default function Step4({
           </>
         )}
         <NumberInput
+          allowLeadingZeros
+          hideControls
           label="Geworben durch Mitglied"
           description="(Mitgliedsnummer angeben)"
           key={form.key("advertNumber")}
           {...form.getInputProps("advertNumber")}
-          hideControls
         />
         <Fieldset legend="Bereits Fanclub-Mitglied?">
           <FormRow>
-            <TextInput
+            <NumberInput
+              allowLeadingZeros
+              hideControls
               label="Fanclub OFCN-Nr."
               key={form.key("ofcnNumber")}
               {...form.getInputProps("ofcnNumber")}

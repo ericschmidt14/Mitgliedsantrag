@@ -32,7 +32,7 @@ export const getInitialValues = () => {
     certificate: null,
     certificateName: "",
     advertNumber: null,
-    ofcnNumber: "",
+    ofcnNumber: null,
     ofcnName: "",
     depositor: "",
     iban: "",
@@ -79,7 +79,7 @@ export interface FormValues {
   certificate?: File | null;
   certificateName?: string;
   advertNumber?: number | null;
-  ofcnNumber?: string;
+  ofcnNumber?: number | null;
   ofcnName?: string;
   depositor: string;
   iban: string;

@@ -9,6 +9,17 @@ export const titles = [
 
 export const genders = ["Männlich", "Weiblich", "Divers"];
 
+export const media = [
+  {
+    value: "digital",
+    label: "Digital-Version",
+  },
+  {
+    value: "postalisch",
+    label: "Print-Version",
+  },
+];
+
 export const countries = [
   {
     value: "AF",

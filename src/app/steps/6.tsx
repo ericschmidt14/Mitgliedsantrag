@@ -5,6 +5,7 @@ import { FormWrapper } from "../components/form";
 import Title from "../components/title";
 import { FormValues } from "../form/form";
 import { PRIVACY_NOTICE } from "../lib/constants";
+import { media } from "../lib/data";
 
 export default function Step6({
   form,
@@ -49,7 +50,7 @@ export default function Step6({
       <Select
         key={form.key("magazine")}
         {...form.getInputProps("magazine")}
-        data={["Digital-Version", "Print-Version"]}
+        data={media}
         checkIconPosition="right"
         allowDeselect={false}
         label="Bitte sendet mir die Mitgliederzeitung als"
