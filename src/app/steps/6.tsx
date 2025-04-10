@@ -1,5 +1,5 @@
 "use client";
-import { Checkbox, Divider, Select, TextInput } from "@mantine/core";
+import { Checkbox, Divider, Select } from "@mantine/core";
 import { UseFormReturnType } from "@mantine/form";
 import { FormWrapper } from "../components/form";
 import Title from "../components/title";
@@ -12,8 +12,6 @@ export default function Step6({
 }: {
   form: UseFormReturnType<FormValues>;
 }) {
-  const OTHER = "Sonstiges (Bitte angeben)";
-
   return (
     <FormWrapper>
       <Title text="Sonstiges" />
@@ -36,17 +34,10 @@ export default function Step6({
           "Auf anderen FCN-Veranstaltungen",
           "Fußballcamps/Fußballschule",
           "AIRTIME Trampolinpark",
-          OTHER,
         ]}
         checkIconPosition="right"
         label="Wie bist Du auf die Mitgliedschaft aufmerksam geworden?"
       />
-      {form.values.advertisement === OTHER && (
-        <TextInput
-          key={form.key("advertisementOther")}
-          {...form.getInputProps("advertisementOther")}
-        />
-      )}
       <Select
         key={form.key("magazine")}
         {...form.getInputProps("magazine")}

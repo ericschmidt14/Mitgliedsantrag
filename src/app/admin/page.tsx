@@ -1,7 +1,13 @@
 "use client";
 import { Button, Pagination, Table, TextInput } from "@mantine/core";
-import { IconLogout, IconRefresh, IconSearch } from "@tabler/icons-react";
+import {
+  IconCirclePlus,
+  IconLogout,
+  IconRefresh,
+  IconSearch,
+} from "@tabler/icons-react";
 import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loader from "../components/loader";
 import Login from "../components/login";
@@ -74,10 +80,20 @@ export default function Page() {
           <Button
             variant="transparent"
             color="gray"
+            component={Link}
+            href="/?manuell"
+            target="_blank"
+            leftSection={<IconCirclePlus size={16} />}
+          >
+            Antrag stellen
+          </Button>
+          <Button
+            variant="transparent"
+            color="gray"
             leftSection={<IconRefresh size={16} />}
             onClick={() => fetchData()}
           >
-            Aktualisieren
+            Ansicht aktualisieren
           </Button>
           <Button
             variant="light"

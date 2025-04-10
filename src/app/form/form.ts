@@ -40,7 +40,6 @@ export const getInitialValues = () => {
     acceptSepa: false,
     acceptCharter: false,
     advertisement: "",
-    advertisementOther: "",
     magazine: "digital",
     id: "Digital-Version",
     newsletter: false,
@@ -90,7 +89,6 @@ export interface FormValues {
   acceptSepa: boolean;
   acceptCharter: boolean;
   advertisement: string;
-  advertisementOther?: string;
   magazine: string;
   id: string;
   newsletter: boolean;
