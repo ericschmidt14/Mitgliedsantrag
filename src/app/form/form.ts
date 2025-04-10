@@ -41,7 +41,7 @@ export const getInitialValues = () => {
     acceptCharter: false,
     advertisement: "",
     advertisementOther: "",
-    magazine: "Digital-Version",
+    magazine: "digital",
     id: "Digital-Version",
     newsletter: false,
     acceptPrivacyNewMember: false,
