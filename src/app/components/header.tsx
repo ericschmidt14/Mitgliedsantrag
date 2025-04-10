@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core";
 import { IconMail } from "@tabler/icons-react";
 import Image from "next/image";
+import { CONTACT_EMAIL } from "../lib/constants";
 
 export default function Header() {
   return (
@@ -16,7 +17,7 @@ export default function Header() {
         color="dark"
         className="hidden md:block"
         component="a"
-        href="mailto:mitglied@fcn.de"
+        href={`mailto:${CONTACT_EMAIL}`}
         leftSection={<IconMail size={20} />}
       >
         Kontakt

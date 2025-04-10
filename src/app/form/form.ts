@@ -46,6 +46,7 @@ export const getInitialValues = () => {
     newsletter: false,
     acceptPrivacyNewMember: false,
     acceptPrivacyBirthday: false,
+    acceptPrivacyMarketing: false,
   };
 };
 
@@ -95,4 +96,5 @@ export interface FormValues {
   newsletter: boolean;
   acceptPrivacyNewMember: boolean;
   acceptPrivacyBirthday: boolean;
+  acceptPrivacyMarketing: boolean;
 }

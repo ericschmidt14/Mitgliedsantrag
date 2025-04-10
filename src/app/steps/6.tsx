@@ -4,7 +4,7 @@ import { UseFormReturnType } from "@mantine/form";
 import { FormWrapper } from "../components/form";
 import Title from "../components/title";
 import { FormValues } from "../form/form";
-import { PRIVACY_NOTICE } from "../lib/constants";
+import { CHARTER, PRIVACY_NOTICE } from "../lib/constants";
 import { media } from "../lib/data";
 
 export default function Step6({
@@ -111,16 +111,17 @@ export default function Step6({
         key={form.key("acceptPrivacyBirthday")}
         {...form.getInputProps("acceptPrivacyBirthday", { type: "checkbox" })}
       />
+      <Checkbox
+        label="Ich willige hiermit ausdrücklich ein, dass der 1. FC Nürnberg e. V. meine angegebenen Daten über die Vertragslaufzeit hinaus bis zu meinem Widerruf zu Marktforschungs-, Analyse- und Marketingzwecken nutzt und mich zu diesem Zweck per Post, E-Mail, Telefon und SMS kontaktieren darf, um mich über aktuelle Angebote und Dienstleistungen rund um den 1. FC Nürnberg zu informieren."
+        key={form.key("acceptPrivacyMarketing")}
+        {...form.getInputProps("acceptPrivacyMarketing", { type: "checkbox" })}
+      />
       <Divider label="Satzung" />
       <Checkbox
         label={
           <>
             Hiermit bin ich mit der{" "}
-            <a
-              href="https://www.fcn.de/fileadmin/fcn/red/saison_18/Downloads/pdf/Vereinssatzung-FCN-0319.pdf"
-              className="link"
-              target="_blank"
-            >
+            <a href={CHARTER} className="link" target="_blank">
               Satzung des 1. FCN
             </a>{" "}
             einverstanden.

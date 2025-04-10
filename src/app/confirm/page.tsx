@@ -9,6 +9,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Footer from "../components/footer";
 import Logo from "../components/logo";
+import { CONTACT_EMAIL } from "../lib/constants";
 
 export default function Page() {
   const searchParams = useSearchParams();
@@ -46,7 +47,7 @@ export default function Page() {
               <p>
                 Leider ist bei der Bestätigung Deiner Mail-Adresse etwas schief
                 gelaufen. Bitte melde Dich unter{" "}
-                <a href="mailto:mitglied@fcn.de">mitglied@fcn.de</a>.
+                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
               </p>
             </>
           ) : confirm ? (
