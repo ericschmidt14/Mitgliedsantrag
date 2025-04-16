@@ -46,7 +46,7 @@ export default function Step1({
         Das ist ambitioniert, doch gemeinsam können wir es schaffen.
       </p>
       <p>
-        <i>Werde Mitglied - werde #TEILDERLEGENDE</i>
+        <i>Werde Mitglied - werde #TeilderLegende</i>
       </p>
       <div className="pt-16">
         <h3 className="pt-4">Dieser Mitgliedsantrag ist ...</h3>

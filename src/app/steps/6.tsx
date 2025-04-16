@@ -71,23 +71,12 @@ export default function Step6({
       <p className="small">
         Erläuterungen zu Informationen auf Basis persönlicher Interessen
         erhältst Du{" "}
-        <a href={PRIVACY_NOTICE} className="link small" target="_blank">
+        <a
+          href="https://fcn.de/fileadmin/fcn/red/saison_24/Downloads/pdf/URL-Basis_persoenlicher_Interessen_Newsletter.pdf"
+          className="link small"
+          target="_blank"
+        >
           hier
-        </a>
-        .
-      </p>
-      <p className="small">
-        Mir ist bewusst, dass ich diese Einwilligung jederzeit mit Wirkung für
-        die Zukunft, per E-Mail an{" "}
-        <a href="mailto:datenschutz@fcn.de" className="link small">
-          datenschutz@fcn.de
-        </a>{" "}
-        widerrufen kann. Wir setzen Dich davon in Kenntnis, dass durch den
-        Widerruf der Einwilligung die Rechtmäßigkeit der aufgrund der
-        Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.
-        Weitere Informationen findest Du in unserer{" "}
-        <a href={PRIVACY_NOTICE} className="link small" target="_blank">
-          Datenschutzerklärung
         </a>
         .
       </p>
@@ -107,6 +96,21 @@ export default function Step6({
         key={form.key("acceptPrivacyMarketing")}
         {...form.getInputProps("acceptPrivacyMarketing", { type: "checkbox" })}
       />
+      <p className="small">
+        Mir ist bewusst, dass ich diese Einwilligungen jederzeit mit Wirkung für
+        die Zukunft, per E-Mail an{" "}
+        <a href="mailto:datenschutz@fcn.de" className="link small">
+          datenschutz@fcn.de
+        </a>{" "}
+        widerrufen kann. Wir setzen Dich davon in Kenntnis, dass durch den
+        Widerruf der Einwilligung die Rechtmäßigkeit der aufgrund der
+        Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt wird.
+        Weitere Informationen findest Du in unserer{" "}
+        <a href={PRIVACY_NOTICE} className="link small" target="_blank">
+          Datenschutzerklärung
+        </a>
+        .
+      </p>
       <Divider label="Satzung" />
       <Checkbox
         label={

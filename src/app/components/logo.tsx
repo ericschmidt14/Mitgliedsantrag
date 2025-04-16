@@ -10,7 +10,7 @@ export default function Logo() {
         alt="1. FCN Logo"
       />
       <h1 className="text-2xl">
-        Mitglieds<i>antrag</i>
+        Mitglieds<i>Antrag</i>
       </h1>
     </div>
   );
