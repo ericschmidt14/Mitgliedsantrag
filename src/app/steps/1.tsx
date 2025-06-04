@@ -53,6 +53,7 @@ export default function Step1({
         <SegmentedControl
           key={form.key("applicantType")}
           {...form.getInputProps("applicantType")}
+          aria-label="Dieser Mitgliedsantrag ist"
           fullWidth
           data={applicantTypes.map((t) => {
             return {

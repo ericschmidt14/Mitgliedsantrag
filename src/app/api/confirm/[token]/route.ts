@@ -2,9 +2,11 @@ import { FCN_WEB_API } from "@/app/lib/constants";
 
 export async function GET(
   request: Request,
-  { params }: { params: { token: string } }
+  { params }: { params: Promise<{ token: string }> }
 ) {
-  const res = await fetch(`${FCN_WEB_API}/Member/Confirm/${params.token}`, {
+  const { token } = await params;
+
+  const res = await fetch(`${FCN_WEB_API}/Member/Confirm/${token}`, {
     method: "GET",
     headers: {
       Accept: "*/*",

@@ -1,4 +1,4 @@
-import { ColorSchemeScript, MantineProvider, createTheme } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import type { Metadata } from "next";
@@ -37,9 +37,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <head>
-        <ColorSchemeScript defaultColorScheme="dark" />
-      </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme="dark">
           <Suspense>

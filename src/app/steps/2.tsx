@@ -57,6 +57,7 @@ export default function Step2({
               key={form.key("gender")}
               {...form.getInputProps("gender")}
               fullWidth
+              aria-label="Geschlecht"
               data={genders}
               transitionDuration={500}
               transitionTimingFunction="linear"
@@ -88,6 +89,7 @@ export default function Step2({
           defaultLevel="decade"
           valueFormat="DD.MM.YYYY"
           label="Geburtstag"
+          aria-label="Geburtstag"
           placeholder="TT.MM.JJJJ"
           minDate={
             form.values.applicantType === "self" ? undefined : eighteenYearsAgo

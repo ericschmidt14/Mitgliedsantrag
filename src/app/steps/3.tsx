@@ -88,6 +88,7 @@ export default function Step3({
                   key={form.key("parentGender")}
                   {...form.getInputProps("parentGender")}
                   fullWidth
+                  aria-label="Geschlecht"
                   data={genders}
                   transitionDuration={500}
                   transitionTimingFunction="linear"
@@ -117,6 +118,7 @@ export default function Step3({
               defaultLevel="decade"
               valueFormat="DD.MM.YYYY"
               label="Geburtstag"
+              aria-label="Geburtstag"
               placeholder="TT.MM.JJJJ"
               minDate={undefined}
               maxDate={eighteenYearsAgo}
