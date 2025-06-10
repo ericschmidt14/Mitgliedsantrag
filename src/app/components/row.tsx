@@ -1,17 +1,12 @@
-import { ActionIcon, Button, CopyButton, Drawer, Table } from "@mantine/core";
+import { ActionIcon, Button, Drawer, Table } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconCheck,
-  IconClipboard,
-  IconDownload,
-  IconId,
-} from "@tabler/icons-react";
+import { IconDownload, IconId } from "@tabler/icons-react";
 import dayjs from "dayjs";
 import { Result } from "../lib/interfaces";
+import Summary from "./summary";
 
 export default function Row({ result }: { result: Result }) {
   const [opened, { open, close }] = useDisclosure(false);
-
   const dateFormat = "DD.MM.YYYY hh:mm:ss";
 
   const handleDownload = () => {
@@ -67,29 +62,11 @@ export default function Row({ result }: { result: Result }) {
 
       <Drawer opened={opened} onClose={close} position="right" size="lg">
         <div className="flex flex-col gap-4 overflow-x-hidden">
-          <header className="flex justify-between items-baseline gap-2">
-            <h2>Details</h2>
-
-            <CopyButton value={JSON.stringify(result.json, null, 2)}>
-              {({ copied, copy }) => (
-                <Button
-                  variant="light"
-                  size="xs"
-                  leftSection={
-                    copied ? (
-                      <IconCheck size={16} />
-                    ) : (
-                      <IconClipboard size={16} />
-                    )
-                  }
-                  onClick={copy}
-                >
-                  {copied ? "Daten kopiert" : "Daten kopieren"}
-                </Button>
-              )}
-            </CopyButton>
-          </header>
-          <pre className="text-sm">{JSON.stringify(result.json, null, 2)}</pre>
+          <h2>Details</h2>
+          <Summary values={result.json} copy />
+          <pre className="text-sm muted pt-8">
+            {JSON.stringify(result.json, null, 2)}
+          </pre>
         </div>
       </Drawer>
     </>

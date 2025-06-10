@@ -11,7 +11,6 @@ import { UseFormReturnType } from "@mantine/form";
 import { IconCalendar, IconInfoCircle } from "@tabler/icons-react";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { useEffect, useRef } from "react";
 import { FormRow, FormWrapper } from "../components/form";
 import Label from "../components/label";
 import Title from "../components/title";
@@ -24,10 +23,6 @@ export default function Step2({
   form: UseFormReturnType<FormValues>;
 }) {
   dayjs.extend(customParseFormat);
-  const focused = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    focused.current?.focus();
-  }, []);
 
   const today = new Date();
   const eighteenYearsAgo = new Date();
