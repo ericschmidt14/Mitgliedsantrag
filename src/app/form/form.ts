@@ -26,7 +26,6 @@ export const getInitialValues = () => {
     parentPostalCode: "",
     parentCity: "",
     parentCountry: "DE",
-    parentEmail: "",
     entryDate: new Date(),
     membershipType: "",
     certificate: null,

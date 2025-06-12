@@ -105,6 +105,10 @@ article.small li {
   background: transparent;
 }
 
+.mantine-Pagination-control:not([data-active]) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .responsive-table {
   width: 100%;
   border-collapse: collapse;

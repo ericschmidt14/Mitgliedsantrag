@@ -111,12 +111,6 @@ export default function Page() {
           rightSection={<p>{filteredResults.length}</p>}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          styles={{
-            input: {
-              background: "rgba(0,0,0,0.2)",
-              border: "1px solid rgb(66, 66, 66)",
-            },
-          }}
         />
         {currentPageData.length < 1 ? (
           <p className="muted text-center p-4">Keine Anträge vorhanden.</p>

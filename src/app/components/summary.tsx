@@ -98,7 +98,8 @@ export default function Summary({
       <Table.Tbody>
         {data.map((entry, index) => {
           return (
-            entry.value?.toString().trim() !== "" && (
+            entry.value?.toString().trim() !== "" &&
+            entry.value?.toString().trim() !== "null" && (
               <Table.Tr key={index}>
                 <Table.Td>
                   <b>{entry.label}</b>
