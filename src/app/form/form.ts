@@ -11,6 +11,7 @@ export const getInitialValues = () => {
     postalCode: "",
     city: "",
     country: "DE",
+    memberEmail: "",
     email: "",
     phone: "",
     mobile: "",
@@ -60,6 +61,7 @@ export interface FormValues {
   postalCode: string;
   city: string;
   country: string;
+  memberEmail: string;
   email: string;
   phone?: string;
   mobile?: string;

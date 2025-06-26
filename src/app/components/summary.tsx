@@ -32,6 +32,10 @@ export default function Summary({
       value: `${values.street}, ${values.postalCode}  ${values.city},  ${values.country}`,
     },
     {
+      label: "E-Mail des Mitglieds",
+      value: values.memberEmail,
+    },
+    {
       label: "E-Mail",
       value: values.email,
     },

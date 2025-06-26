@@ -24,6 +24,12 @@ export default function Step4({
 }) {
   dayjs.extend(customParseFormat);
 
+  const today = new Date();
+  const twoWeeksAgo = new Date();
+  twoWeeksAgo.setDate(today.getDate() - 14);
+  const oneMonthAhead = new Date();
+  oneMonthAhead.setMonth(today.getMonth() + 1);
+
   const getTypes = () => {
     const age = differenceInYears(new Date(), new Date(form.values.dob || ""));
 
@@ -54,14 +60,8 @@ export default function Step4({
             valueFormat="DD.MM.YYYY"
             label="Gewünschtes Eintrittsdatum"
             placeholder="TT.MM.JJJJ"
-            excludeDate={(d) => {
-              const today = new Date();
-              const twoWeeksAgo = new Date(today);
-              twoWeeksAgo.setDate(today.getDate() - 14);
-              const oneMonthAhead = new Date(today);
-              oneMonthAhead.setMonth(today.getMonth() + 1);
-              return !(d >= twoWeeksAgo && d <= oneMonthAhead);
-            }}
+            minDate={twoWeeksAgo}
+            maxDate={oneMonthAhead}
             key={form.key("entryDate")}
             {...form.getInputProps("entryDate")}
             leftSection={<IconCalendar size={16} />}

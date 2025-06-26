@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @font-face {
   font-family: "Glober Regular";
@@ -39,10 +37,6 @@ i {
 body {
   color: var(--foreground);
   background-color: var(--background);
-}
-
-h1 {
-  font-size: 72px;
 }
 
 h2 {

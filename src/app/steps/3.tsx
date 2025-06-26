@@ -42,30 +42,6 @@ export default function Step3({
               : "Daten des Schenkers"
           }
         />
-        <TextInput
-          label="E-Mail"
-          name="email"
-          autoComplete="email"
-          key={form.key("email")}
-          {...form.getInputProps("email")}
-          withAsterisk
-        />
-        <FormRow>
-          <TextInput
-            label="Telefon"
-            name="phone"
-            autoComplete="phone"
-            key={form.key("phone")}
-            {...form.getInputProps("phone")}
-          />
-          <TextInput
-            label="Mobil"
-            name="mobile"
-            autoComplete="mobile"
-            key={form.key("mobile")}
-            {...form.getInputProps("mobile")}
-          />
-        </FormRow>
         {form.values.applicantType !== "self" && (
           <>
             <h3 className="pt-4">Persönliche Daten</h3>
@@ -188,8 +164,33 @@ export default function Step3({
                 />
               </Fieldset>
             )}
+            <h3 className="pt-4">Kontaktdaten</h3>
           </>
         )}
+        <TextInput
+          label="E-Mail"
+          name="email"
+          autoComplete="email"
+          key={form.key("email")}
+          {...form.getInputProps("email")}
+          withAsterisk
+        />
+        <FormRow>
+          <TextInput
+            label="Telefon"
+            name="phone"
+            autoComplete="phone"
+            key={form.key("phone")}
+            {...form.getInputProps("phone")}
+          />
+          <TextInput
+            label="Mobil"
+            name="mobile"
+            autoComplete="mobile"
+            key={form.key("mobile")}
+            {...form.getInputProps("mobile")}
+          />
+        </FormRow>
       </FormWrapper>
     </DatesProvider>
   );

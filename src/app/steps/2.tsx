@@ -27,6 +27,8 @@ export default function Step2({
   const today = new Date();
   const eighteenYearsAgo = new Date();
   eighteenYearsAgo.setFullYear(today.getFullYear() - 18);
+  const fourteenYearsAgo = new Date();
+  fourteenYearsAgo.setFullYear(today.getFullYear() - 14);
 
   return (
     <DatesProvider settings={{ locale: "de" }}>
@@ -145,6 +147,17 @@ export default function Step2({
           allowDeselect={false}
           searchable
         />
+        {form.values.applicantType === "parent" &&
+          dayjs(form.values.dob).isBefore(fourteenYearsAgo) && (
+            <>
+              <h3 className="pt-4">Kontaktdaten</h3>
+              <TextInput
+                label="E-Mail"
+                key={form.key("memberEmail")}
+                {...form.getInputProps("memberEmail")}
+              />
+            </>
+          )}
       </FormWrapper>
     </DatesProvider>
   );

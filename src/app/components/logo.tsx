@@ -5,8 +5,8 @@ export default function Logo() {
     <div className="flex items-center gap-1">
       <Image
         src="/logo_transparent.svg"
-        width={48}
-        height={48}
+        width={32}
+        height={32}
         alt="1. FCN Logo"
       />
       <h1 className="text-2xl">

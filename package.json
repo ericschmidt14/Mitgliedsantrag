@@ -10,29 +10,29 @@
     "countries": "node countries.js"
   },
   "dependencies": {
-    "@mantine/core": "^7.10.0",
-    "@mantine/dates": "^7.10.0",
-    "@mantine/form": "^7.10.0",
-    "@mantine/hooks": "^7.10.0",
-    "@mantine/modals": "^7.10.0",
-    "@tabler/icons-react": "^3.5.0",
+    "@mantine/core": "^8.1.0",
+    "@mantine/dates": "^8.1.0",
+    "@mantine/form": "^8.1.0",
+    "@mantine/hooks": "^8.1.0",
+    "@tabler/icons-react": "^3.34.0",
     "date-fns": "^3.6.0",
-    "dayjs": "^1.11.11",
+    "dayjs": "^1.11.13",
     "json-2-csv": "^5.5.5",
     "next": "^15.3.3",
     "next-auth": "^4.24.11",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "postcss": "^8",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
     "svg-to-ico": "^1.0.14",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }

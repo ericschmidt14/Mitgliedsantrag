@@ -34,6 +34,9 @@ export default function Home() {
   const [error, setError] = useState(false);
 
   const STEPS = 7;
+  const today = new Date();
+  const fourteenYearsAgo = new Date();
+  fourteenYearsAgo.setFullYear(today.getFullYear() - 14);
 
   const form = useForm<FormValues>({
     validateInputOnChange: true,
@@ -76,6 +79,14 @@ export default function Home() {
                   values.certificate &&
                   (await fileToBase64(values.certificate)),
               };
+
+              if (
+                values.applicantType === "self" ||
+                dayjs(values.dob).isAfter(fourteenYearsAgo) ||
+                !/\S+@\S+\.\S+/.test(values.memberEmail)
+              ) {
+                data.memberEmail = values.email;
+              }
 
               if (
                 values.applicantType === "parent" &&

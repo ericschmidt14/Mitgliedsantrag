@@ -18,6 +18,7 @@ export default function Row({ result }: { result: Result }) {
     }
 
     const link = document.createElement("a");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     link.href = result.json.certificate as any;
     link.download = result.json.certificateName!;
     document.body.appendChild(link);
