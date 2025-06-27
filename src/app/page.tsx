@@ -66,7 +66,7 @@ export default function Home() {
         <section className="flex flex-col justify-center items-center">
           <StepperIndicator steps={STEPS} active={active} />
           <form
-            className="w-full md:w-[768px] p-4 flex flex-col"
+            className="w-full md:w-[768px] flex flex-col"
             onSubmit={form.onSubmit(async (values) => {
               const data = {
                 ...values,

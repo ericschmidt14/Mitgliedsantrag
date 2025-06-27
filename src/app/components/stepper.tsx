@@ -15,7 +15,7 @@ export default function StepperIndicator({
         overflow: "hidden",
         position: "sticky",
         backgroundColor: "var(--mantine-color-dark-4)",
-        top: "64px",
+        top: "48px",
         zIndex: "1000",
       }}
     >

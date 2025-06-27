@@ -40,7 +40,7 @@ export default function RootLayout({
       <body>
         <MantineProvider theme={theme} defaultColorScheme="dark">
           <Suspense>
-            <main className="min-h-screen flex flex-col justify-between bg-[length:300%_300%] bg-[#220407]">
+            <main className="min-h-screen flex flex-col justify-between bg-[#220407]">
               {children}
             </main>
           </Suspense>
