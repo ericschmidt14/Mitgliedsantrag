@@ -106,10 +106,6 @@ article.small li {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.mantine-SegmentedControl-root {
-  border: calc(0.0625rem * var(--mantine-scale)) solid var(--input-bd);
-}
-
 .responsive-table {
   width: 100%;
   border-collapse: collapse;
