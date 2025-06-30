@@ -179,7 +179,7 @@ export default function Step3({
           <TextInput
             label="Telefon"
             name="phone"
-            autoComplete="phone"
+            autoComplete="tel"
             key={form.key("phone")}
             {...form.getInputProps("phone")}
           />
