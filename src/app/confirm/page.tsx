@@ -3,6 +3,7 @@ import { Paper } from "@mantine/core";
 import {
   IconCircleCheck,
   IconExclamationCircle,
+  IconInfoCircle,
   IconLoader2,
 } from "@tabler/icons-react";
 import { useSearchParams } from "next/navigation";
@@ -86,7 +87,7 @@ export default function Page() {
       case "alreadyConfirmed":
         return (
           <>
-            <IconCircleCheck size={48} />
+            <IconInfoCircle size={48} />
             <p>
               <b>
                 Hallo {member?.firstname}, Deine E-Mail-Adresse wurde bereits

@@ -35,7 +35,7 @@ export default function Step4({
 
     const types = [
       "Schwerbehinderte – 40€",
-      "Fördermitglieder – 500€",
+      "Fördermitgliedschaft – 500€",
       "Lebenslange Mitgliedschaft – 1.900€",
     ];
 
